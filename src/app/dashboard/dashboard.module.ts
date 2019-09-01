@@ -9,9 +9,11 @@ import { DistrictComponent } from './district/district.component';
 import { AngularMyDatePickerModule } from 'angular-mydatepicker';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LedVehicleTabComponent } from './led-vehicle-tab/led-vehicle-tab.component';
+import { CreateVehicleComponent } from './led-vehicle-tab/create-vehicle/create-vehicle.component';
 
 @NgModule({
-  declarations: [DashboardComponent, MydashboardComponent, DistrictComponent],
+  declarations: [DashboardComponent, MydashboardComponent, DistrictComponent, LedVehicleTabComponent, CreateVehicleComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

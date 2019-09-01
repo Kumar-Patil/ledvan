@@ -30,6 +30,15 @@ export class DashboardComponent implements OnInit {
     {value: 'change', viewValue: 'Change password'},
     {value: 'logout', viewValue: 'Logout'}
   ];
+
+  name = 'Angular 5';
+  objectKeys = Object.keys;
+
+  // tslint:disable-next-line:variable-name
+  my_menu = {
+    main1: ['sub1', 'sub2'],
+    main2: ['sub1', 'sub2', 'sub3'],
+  };
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {

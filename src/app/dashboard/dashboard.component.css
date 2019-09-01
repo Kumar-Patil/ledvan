@@ -30,12 +30,21 @@
   .menu-button.rotated {
     transform: rotate(180deg);
   }
+  /* #ledDisplay {
+    position: absolute !important;
+    top: 50px !important;
+    left: 50px !important;
+  } */
+  ::ng-deep .cdk-overlay-connected-position-bounding-box {
+    left: 70px !important;
+  }
   .submenu {
     overflow-y: hidden;
     transition: transform 300ms ease;
     transform: scaleY(0);
     transform-origin: top;
     padding-left: 30px;
+    /*  */
   }
   .submenu.expanded {
     transform: scaleY(1);

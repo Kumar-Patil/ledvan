@@ -9,9 +9,11 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { HttpClientModule } from '@angular/common/http';
-
+import { UnreviewedDisplayComponent } from './unreviewed-display/unreviewed-display.component';
+import { ReviewedDisplayComponent } from './reviewed-display/reviewed-display.component';
+import { TableModule } from 'primeng/table';
 @NgModule({
-  declarations: [LedVehicleComponent, CreateDisplayComponent],
+  declarations: [LedVehicleComponent, CreateDisplayComponent, UnreviewedDisplayComponent, ReviewedDisplayComponent],
   imports: [
     CommonModule,
     LedVehicleRoutingModule,
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     NgbModule,
     SelectDropDownModule,
-    HttpClientModule
+    HttpClientModule,
+    TableModule
   ]
 })
 export class LedVehicleModule { }

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LedVehicleComponent } from './led-vehicle.component';
 import { CreateDisplayComponent } from './create-display/create-display.component';
+import { UnreviewedDisplayComponent } from './unreviewed-display/unreviewed-display.component';
+import { ReviewedDisplayComponent } from './reviewed-display/reviewed-display.component';
 
 
 const routes: Routes = [
@@ -9,9 +11,20 @@ const routes: Routes = [
     path: '', component: LedVehicleComponent,
     children: [
       {
-          path: '',
-          component: CreateDisplayComponent,
-      }
+        path: 'createDisplay',
+        component: CreateDisplayComponent
+      },
+      {
+        path: 'unreviewedDisplay',
+        component: UnreviewedDisplayComponent,
+      },
+      {
+        path: 'reviewedDisplay',
+        component: ReviewedDisplayComponent,
+      },
+      {
+        path: '', redirectTo: 'createDisplay', pathMatch: 'full'
+      },
     ]
   }
 ];

@@ -3,18 +3,20 @@
     <mat-icon (click)="onToolbarMenuToggle()" id="toolbarMenu">subject</mat-icon>
     Stage Light and Sound
     <span class="toolbar-spacer"></span>
-    
-    
-    <button mat-button [matMenuTriggerFor]="belowMenu"><mat-icon>account_circle</mat-icon></button>
+
+
+    <button mat-button [matMenuTriggerFor]="belowMenu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
     <mat-menu #belowMenu="matMenu" yPosition="below">
       <button mat-menu-item>Change password</button>
       <button (click)="logout()" mat-menu-item>
-          Logout
+        Logout
       </button>
     </mat-menu>
   </mat-toolbar>
 
-  <mat-sidenav-container id="sidenavContainer" fullscreen>
+  <mat-sidenav-container id="sidenavContainer" fullscreen autosize>
     <mat-sidenav mode="side" #sidenav id="sidenav" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen"
       opened>
 
@@ -30,7 +32,7 @@
               </mat-card-header>
             </mat-card> -->
         <mat-list-item>
-          <button [routerLink]="['']" routerLinkActive="active" class="menu-item" mat-flat-button>
+          <button [routerLink]="'/'" routerLinkActive="active" class="menu-item" mat-flat-button>
             <mat-icon>dashboard</mat-icon>
             Dashboard
           </button>
@@ -43,24 +45,82 @@
           </button>
         </mat-list-item>
 
-        <mat-list-item (click)="showSubmenu = !showSubmenu">
+        <!-- <mat-list-item (click)="showSubmenu1 = !showSubmenu1">
           <button (click)="mouseenter()" (mouseleave)="mouseleave()" class="menu-item" mat-flat-button>
             <mat-icon>settings_application</mat-icon>
             LED Vehicle
-            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu1}" *ngIf="isExpanded || isShowing">
+              expand_more</mat-icon>
           </button>
+
+        </mat-list-item>
+        <div id="ledDisplay" class="submenu" [ngClass]="{'expanded' : showSubmenu1}" *ngIf="isShowing || isExpanded">
+          <button [routerLink]="'ledVehicle/createDisplay'" routerLinkActive="active" class="menu-item" mat-flat-button>
+            Create Vehicle
+          </button>
+        </div> -->
+
+        <mat-list-item>
+          <button [matMenuTriggerFor]="led_vehicle" class="menu-item" mat-flat-button>
+              <mat-icon>settings_application</mat-icon>
+              LED Vehicle
+              <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+                  expand_more</mat-icon>
+          </button>
+          <mat-menu #led_vehicle="matMenu">
+            <ng-container>
+              <button mat-menu-item [routerLink]="'createVehicle'">Create Vehicle</button>
+            </ng-container>
+            <ng-container>
+                <button mat-menu-item >View Vehicles</button>
+              </ng-container>
+          </mat-menu>
+        </mat-list-item>
+
+        <mat-list-item>
+            <button [matMenuTriggerFor]="led_display" class="menu-item" mat-flat-button>
+                <mat-icon>settings_application</mat-icon>
+                LED Display
+                <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+                    expand_more</mat-icon>
+            </button>
+            <mat-menu #led_display="matMenu">
+              <ng-container>
+                <button mat-menu-item [routerLink]="'ledVehicle/createDisplay'">Create Vehicle</button>
+              </ng-container>
+              <ng-container>
+                  <button mat-menu-item [routerLink]="'ledVehicle/unreviewedDisplay'">Unreviewed Display</button>
+                </ng-container>
+                <ng-container>
+                    <button mat-menu-item [routerLink]="'ledVehicle/reviewedDisplay'">Reviewed Display</button>
+                  </ng-container>
+                
+            </mat-menu>
+          </mat-list-item>
+
+        <!-- <mat-list-item (click)="showSubmenu = !showSubmenu">
+          <button (click)="mouseenter()" (mouseleave)="mouseleave()" class="menu-item" mat-flat-button>
+            <mat-icon>settings_application</mat-icon>
+            LED Display
+            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+              expand_more</mat-icon>
+
+          </button>
+
         </mat-list-item>
         <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
-          <button [routerLink]="['ledVehicle/createDisplay']" routerLinkActive="active" class="menu-item" mat-flat-button>
+          <button [routerLink]="'ledVehicle/createDisplay'" routerLinkActive="active" class="menu-item" mat-flat-button>
             Create Display
           </button>
-          <button class="menu-item" mat-flat-button>
+          <button [routerLink]="'ledVehicle/unreviewedDisplay'" routerLinkActive="active" class="menu-item"
+            mat-flat-button>
             Unreviewd Displays
           </button>
-          <button  class="menu-item" mat-flat-button>
+          <button [routerLink]="'ledVehicle/reviewedDisplay'" routerLinkActive="active" class="menu-item"
+            mat-flat-button>
             Reviewd Display
           </button>
-        </div>
+        </div> -->
       </mat-list>
     </mat-sidenav>
 
@@ -72,5 +132,5 @@
   </mat-sidenav-container>
 
 
-  
+
 </div>

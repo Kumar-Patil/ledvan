@@ -1,0 +1,15 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-led-vehicle-tab',
+  templateUrl: './led-vehicle-tab.component.html',
+  styleUrls: ['./led-vehicle-tab.component.css']
+})
+export class LedVehicleTabComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
