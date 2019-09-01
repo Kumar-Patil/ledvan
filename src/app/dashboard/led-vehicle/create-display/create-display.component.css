@@ -1,0 +1,12 @@
+#create-display {
+    border: 2px solid antiquewhite;
+}
+
+.row {
+  margin: 15px 0;
+}
+
+label {
+  margin-bottom: 0;
+  margin-left: 1px;
+}
