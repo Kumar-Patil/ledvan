@@ -1,19 +1,21 @@
 import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { DistrictService } from '../district.service';
 import { HttpService } from '../../../common/http.service';
 import { ApiService } from '../../../common/api.service';
 
 @Component({
   selector: 'app-create-display',
-  templateUrl: './view-area.component.html',
-  styleUrls: ['./view-area.component.css'],
+  templateUrl: './view-district.component.html',
+  styleUrls: ['./view-district.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ViewAreaComponent implements OnInit {
+export class ViewDistrictComponent implements OnInit {
 
   districts: any;
   cols: any[];
-  constructor(private httpService: HttpService, private apiService: ApiService
+  constructor(private districtService: DistrictService,
+    private httpService: HttpService, private apiService: ApiService
   ) { }
 
   ngOnInit() {
@@ -45,4 +47,5 @@ export class ViewAreaComponent implements OnInit {
 export interface District {
   id;
   districtName;
+
 }
