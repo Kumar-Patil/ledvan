@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UnreviewedDisplayComponent } from './unreviewed-display/unreviewed-display.component';
 import { ReviewedDisplayComponent } from './reviewed-display/reviewed-display.component';
 import { TableModule } from 'primeng/table';
+import { CalendarModule, SharedModule} from 'primeng/primeng';
 @NgModule({
   declarations: [LedVehicleComponent, CreateDisplayComponent, UnreviewedDisplayComponent, ReviewedDisplayComponent],
   imports: [
@@ -22,7 +23,8 @@ import { TableModule } from 'primeng/table';
     NgbModule,
     SelectDropDownModule,
     HttpClientModule,
-    TableModule
+    TableModule,
+    SharedModule
   ]
 })
 export class LedVehicleModule { }

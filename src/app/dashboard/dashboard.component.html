@@ -61,9 +61,26 @@
         </div> -->
 
         <mat-list-item>
-          <button [matMenuTriggerFor]="led_vehicle" class="menu-item" mat-flat-button>
+          <button [matMenuTriggerFor]="area" class="menu-item" mat-flat-button>
               <mat-icon>settings_application</mat-icon>
-              LED Vehicle
+              Area
+              <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+                  expand_more</mat-icon>
+          </button>
+          <mat-menu #area="matMenu">
+            <ng-container>
+              <button mat-menu-item [routerLink]="'createArea'">Create Area</button>
+            </ng-container>
+            <ng-container>
+              <button mat-menu-item [routerLink]="'viewAreas'">View Areas</button>
+            </ng-container>
+          </mat-menu>
+        </mat-list-item>
+
+        <mat-list-item>
+          <button [matMenuTriggerFor]="led_vehicle" class="menu-item" mat-flat-button>
+              <mat-icon>local_shipping</mat-icon>
+              Stage Vehicle
               <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
                   expand_more</mat-icon>
           </button>
@@ -78,15 +95,49 @@
         </mat-list-item>
 
         <mat-list-item>
+          <button [matMenuTriggerFor]="route_map" class="menu-item" mat-flat-button>
+              <mat-icon>map</mat-icon>
+              Route Map
+              <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+                  expand_more</mat-icon>
+          </button>
+          <mat-menu #route_map="matMenu">
+            <ng-container>
+              <button mat-menu-item [routerLink]="'uploadRouteMap'">Upload Route Map</button>
+            </ng-container>
+            <ng-container>
+                <button mat-menu-item [routerLink]="'viewRoutes'">View Routes</button>
+              </ng-container>
+          </mat-menu>
+        </mat-list-item>
+
+        <mat-list-item>
+          <button [matMenuTriggerFor]="panel_display" class="menu-item" mat-flat-button>
+              <mat-icon>person</mat-icon>
+              Panel Users
+              <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+                  expand_more</mat-icon>
+          </button>
+          <mat-menu #panel_display="matMenu">
+            <ng-container>
+              <button mat-menu-item [routerLink]="'createPanelUser'">Create Panel User</button>
+            </ng-container>
+            <ng-container>
+                <button mat-menu-item [routerLink]="'viewPanelUser'">View Panel Users</button>
+              </ng-container>
+          </mat-menu>
+        </mat-list-item>
+
+        <mat-list-item>
             <button [matMenuTriggerFor]="led_display" class="menu-item" mat-flat-button>
-                <mat-icon>settings_application</mat-icon>
-                LED Display
+                <mat-icon>note</mat-icon>
+                Stage Display
                 <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
                     expand_more</mat-icon>
             </button>
             <mat-menu #led_display="matMenu">
               <ng-container>
-                <button mat-menu-item [routerLink]="'ledVehicle/createDisplay'">Create Vehicle</button>
+                <button mat-menu-item [routerLink]="'ledVehicle/createDisplay'">Create Display</button>
               </ng-container>
               <ng-container>
                   <button mat-menu-item [routerLink]="'ledVehicle/unreviewedDisplay'">Unreviewed Display</button>
@@ -98,6 +149,36 @@
             </mat-menu>
           </mat-list-item>
 
+          <mat-list-item>
+            <button [matMenuTriggerFor]="pdf_reports" class="menu-item" mat-flat-button>
+                <mat-icon>local_post_office</mat-icon>
+                PDF Reports
+                <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+                    expand_more</mat-icon>
+            </button>
+            <mat-menu #pdf_reports="matMenu">
+              <ng-container>
+                <button mat-menu-item [routerLink]="'dailyReport'">Daily Report</button>
+              </ng-container>
+              <ng-container>
+                  <button mat-menu-item [routerLink]="'monthlyReport'">Monthly Report</button>
+                </ng-container>
+            </mat-menu>
+          </mat-list-item>
+
+          <mat-list-item>
+            <button [matMenuTriggerFor]="email" class="menu-item" mat-flat-button>
+                <mat-icon>email</mat-icon>
+                Email Settings
+                <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+                    expand_more</mat-icon>
+            </button>
+            <mat-menu #email="matMenu">
+              <ng-container>
+                <button mat-menu-item [routerLink]="'updateSMTP'">Update SMTP</button>
+              </ng-container>
+            </mat-menu>
+          </mat-list-item>
         <!-- <mat-list-item (click)="showSubmenu = !showSubmenu">
           <button (click)="mouseenter()" (mouseleave)="mouseleave()" class="menu-item" mat-flat-button>
             <mat-icon>settings_application</mat-icon>

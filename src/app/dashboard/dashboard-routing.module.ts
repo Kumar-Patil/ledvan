@@ -4,6 +4,14 @@ import { MydashboardComponent } from './mydashboard/mydashboard.component';
 import { DashboardComponent } from './dashboard.component';
 import { DistrictComponent } from './district/district.component';
 import { LedVehicleTabComponent } from './led-vehicle-tab/led-vehicle-tab.component';
+import { CreateAreaComponent } from './area/create-area/create-area.component';
+import { ViewAreaComponent } from './area/view-area/view-area.component';
+import { CreateVehicleComponent } from './led-vehicle-tab/create-vehicle/create-vehicle.component';
+import { CreatePanelUsersComponent } from './panel-users/create-panel-users/create-panel-users.component';
+import { ViewPanelUsersComponent } from './panel-users/view-panel-users/view-panel-users.component';
+import { DailyReportComponent } from './pdf-reports/daily-report/daily-report.component';
+import { MonthlyReportComponent } from './pdf-reports/monthly-report/monthly-report.component';
+import { UpdateSmtpComponent } from './email-settings/update-smtp/update-smtp.component';
 
 const routes: Routes = [
   {
@@ -11,9 +19,7 @@ const routes: Routes = [
     children: [
       {
           path: '',
-          component: MydashboardComponent,
-          redirectTo: 'dashboard',
-          pathMatch: 'full'
+          component: MydashboardComponent
       },
       {
         path: 'district',
@@ -25,10 +31,35 @@ const routes: Routes = [
       },
       {
         path: 'createVehicle',
-        component: LedVehicleTabComponent
+        component: CreateVehicleComponent
       },
       {
-        path: '', redirectTo: 'dashboard', pathMatch: 'full'
+        path: 'createArea',
+        component: CreateAreaComponent
+      },
+      {
+        path: 'viewAreas',
+        component: ViewAreaComponent
+      },
+      {
+        path: 'createPanelUser',
+        component: CreatePanelUsersComponent
+      },
+      {
+        path: 'viewPanelUser',
+        component: ViewPanelUsersComponent
+      },
+      {
+        path: 'dailyReport',
+        component: DailyReportComponent
+      },
+      {
+        path: 'monthlyReport',
+        component: MonthlyReportComponent
+      },
+      {
+        path: 'updateSMTP',
+        component: UpdateSmtpComponent
       }
 
     ]

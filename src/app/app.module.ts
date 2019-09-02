@@ -9,7 +9,8 @@ import { AdminComponent } from './admin/admin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
+import { TableModule } from 'primeng/table';
+import { CalendarModule, SharedModule} from 'primeng/primeng';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     BrowserAnimationsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    TableModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
