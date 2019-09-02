@@ -1,1 +1,80 @@
-<p>create-vehicle works!</p>
+<div class="container">
+        <h4>
+                VEHICLE DETAILS
+        </h4>  
+<form class="create-vehicle-form">
+    <div class="row">
+      <br>
+      <div class="col-lg-6">
+        <div class="p-20">
+          <div class="form-group">
+            <label style="margin-bottom: 10px">Vehicle No</label>
+            <input name="tbvehicleno" type="text" id="tbvehicleno" class="form-control" required=""
+              placeholder="Enter Vehicle No"  [(ngModel)]="vehicle.number">
+          </div>
+          <div class="form-group">
+            <label style="margin-bottom: 10px">Driver Name</label>
+            <input name="tbdrivername" type="text" id="tbdrivername" class="form-control" required=""
+              placeholder="Enter Driver Name"  [(ngModel)]="vehicle.driverName">
+          </div>
+          <div class="form-group">
+            <label style="margin-bottom: 10px">Driver Mobile</label>
+            <input name="tbdrivermobile" type="text" id="tbdrivermobile" class="form-control" required=""
+              placeholder="Enter Driver Mobile"  [(ngModel)]="vehicle.driverMobile">
+          </div>
+          <div class="form-group">
+            <label class="control-label" style="margin-bottom: 10px; padding-top: 0px;">Driver's Picture</label>
+            <input type="file" name="uploaddriver" id="uploaddriver" class="filestyle" data-placeholder="No file"
+              data-classbutton="btn btn-primary" data-classicon="glyphicon glyphicon-folder-open" tabindex="-1"
+              style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"  [(ngModel)]="vehicle.driverPicture">
+            <div class="bootstrap-filestyle input-group"><input type="text" class="form-control " placeholder="No file"
+                disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0"><label for="uploaddriver"
+                  class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span>
+                  <span class="buttonText">Choose file</span></label></span></div>
+          </div>
+          <div class="form-group">
+            <label class="control-label" style="margin-bottom: 10px; padding-top: 0px;">Operator's Picture</label>
+            <input type="file" name="uploadoperator" id="uploadoperator" class="filestyle" data-placeholder="No file"
+              data-classbutton="btn btn-primary" data-classicon="glyphicon glyphicon-folder-open" tabindex="-1"
+              style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"  [(ngModel)]="vehicle.operatorPicture">
+            <div class="bootstrap-filestyle input-group"><input type="text" class="form-control " placeholder="No file"
+                disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0"><label for="uploadoperator"
+                  class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span>
+                  <span class="buttonText">Choose file</span></label></span></div>
+          </div>
+          <br>
+          <button type="submit" name="btcreatevehicle" value="Foo" id="btcreatevehicle"
+            class="ladda-button btn btn-primary float-left" data-style="zoom-out" (click)="createVehicle()">
+            <span aria-hidden="true"></span><span class="ladda-label">Create New Vehicle  </span><span
+              class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i>
+            </span></button>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="p-20">
+          <div class="form-group">
+            <label style="margin-bottom: 10px">District : Area Name</label>
+            <input name="tbareaname" type="text" id="tbareaname" class="form-control" required=""
+              placeholder="Select District: Area Name"  [(ngModel)]="vehicle.area">
+          </div>
+          <div class="form-group">
+            <label style="margin-bottom: 10px">Operator Name</label>
+            <input name="tboperatorname" type="text" id="tboperatorname" class="form-control" required=""
+              placeholder="Enter Operator Name"  [(ngModel)]="vehicle.operatorName">
+          </div>
+          <div class="form-group">
+            <label style="margin-bottom: 10px">Operator Mobile</label>
+            <input name="tboperatormobile" type="text" id="tboperatormobile" class="form-control" required=""
+              placeholder="Enter Operator Mobile"  [(ngModel)]="vehicle.operatorMobile">
+          </div>
+          <div class="form-group">
+            <label style="margin-bottom: 10px">Vehicle Details</label>
+            <textarea name="tbvehicledetail" rows="6" cols="20" id="tbvehicledetail" class="form-control"
+              placeholder="Enter Vehicle Details"  [(ngModel)]="vehicle.vehicleDetails"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,11 @@
+.p-20 {
+    padding: 20px;
+}
+.create-vehicle-form label {
+    float: left;
+    font-weight: 700;
+    color: #666;
+}
+button#btcreatevehicle {
+    float: left;
+}
