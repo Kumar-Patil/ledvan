@@ -39,10 +39,21 @@
         </mat-list-item>
 
         <mat-list-item>
-          <button [routerLink]="['district']" routerLinkActive="active" class="menu-item" mat-flat-button>
+          <button [matMenuTriggerFor]="district" class="menu-item" mat-flat-button>
             <mat-icon>business</mat-icon>
             District
+            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+              expand_more</mat-icon>
           </button>
+          <mat-menu #district="matMenu">
+            <ng-container>
+              <button mat-menu-item [routerLink]="'district/createDistrict'">Create District</button>
+            </ng-container>
+            <ng-container>
+              <button mat-menu-item [routerLink]="'district/viewDistrict'">View Districts</button>
+            </ng-container>
+        
+          </mat-menu>
         </mat-list-item>
 
         <!-- <mat-list-item (click)="showSubmenu1 = !showSubmenu1">
@@ -62,18 +73,19 @@
 
         <mat-list-item>
           <button [matMenuTriggerFor]="area" class="menu-item" mat-flat-button>
-              <mat-icon>room</mat-icon>
-              Area
-              <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
-                  expand_more</mat-icon>
+            <mat-icon>room</mat-icon>
+            Area
+            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
+              expand_more</mat-icon>
           </button>
           <mat-menu #area="matMenu">
             <ng-container>
-              <button mat-menu-item [routerLink]="'createArea'">Create Area</button>
+              <button mat-menu-item [routerLink]="'area/createarea'">Create Area</button>
             </ng-container>
             <ng-container>
-              <button mat-menu-item [routerLink]="'viewAreas'">View Areas</button>
+              <button mat-menu-item [routerLink]="'area/viewarea'">View Area</button>
             </ng-container>
+        
           </mat-menu>
         </mat-list-item>
 

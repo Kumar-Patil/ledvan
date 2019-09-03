@@ -2,10 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MydashboardComponent } from './mydashboard/mydashboard.component';
 import { DashboardComponent } from './dashboard.component';
-import { DistrictComponent } from './district/district.component';
-import { LedVehicleTabComponent } from './led-vehicle-tab/led-vehicle-tab.component';
-import { CreateAreaComponent } from './area/create-area/create-area.component';
-import { ViewAreaComponent } from './area/view-area/view-area.component';
 import { CreateVehicleComponent } from './led-vehicle-tab/create-vehicle/create-vehicle.component';
 import { CreatePanelUsersComponent } from './panel-users/create-panel-users/create-panel-users.component';
 import { ViewPanelUsersComponent } from './panel-users/view-panel-users/view-panel-users.component';
@@ -24,7 +20,7 @@ const routes: Routes = [
       },
       {
         path: 'district',
-        component: DistrictComponent,
+        loadChildren: () => import(`./district/district.module`).then(m => m.DistrictModule)
       },
       {
         path: 'ledVehicle',
@@ -35,16 +31,8 @@ const routes: Routes = [
         component: CreateVehicleComponent
       },
       {
-        path: 'viewVehicle',
-        component: ViewVehiclesComponent
-      },
-      {
-        path: 'createArea',
-        component: CreateAreaComponent
-      },
-      {
-        path: 'viewAreas',
-        component: ViewAreaComponent
+        path: 'area',
+        loadChildren: () => import(`./area/area.module`).then(m => m.AreaModule)
       },
       {
         path: 'createPanelUser',
@@ -65,6 +53,10 @@ const routes: Routes = [
       {
         path: 'updateSMTP',
         component: UpdateSmtpComponent
+      },
+      {
+        path: 'viewVehicle',
+        component: ViewVehiclesComponent
       }
     ]
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-district',
+  selector: 'app-led-vehicle',
   templateUrl: './district.component.html',
   styleUrls: ['./district.component.css']
 })

@@ -3,7 +3,7 @@
     <div class="col-12 col-md-12 col-lg-12" >
       <div>
         <h4>
-          AREA DETAILS
+          DISTRICT DETAILS
         </h4>
       </div>
       <div>
@@ -12,25 +12,19 @@
             <form class="row detail" name="form" #report="ngForm">
               <div class="col-md-3 col-sm-4 col-xs-6">
                 <div class="form-group is-required-short">
-                  <label class="control-label">Area Name*</label>
-                  <input type="text" id="area-id" class="form-control" placeholder="Enter Area Name" name="areaName"
-                  [(ngModel)]="areaName" required="true">
+                  <label class="control-label"><h5>District Name* </h5></label>
+                  <input type="text" id="districtName-id" class="form-control" placeholder="Enter District Name" name="districtName"
+                  [(ngModel)]="districtName" required="true">
                 </div>
               </div>
-              <div class="col-md-3 col-sm-4 col-xs-6">
-                <div class="form-group is-required-short">
-                  <label class="control-label">District Name *</label>
-                    <ngx-select-dropdown (change)="selectionChanged($event)" [config]="config" [options]="options" [(ngModel)]="districtName" name="districtName"></ngx-select-dropdown>
-                  
-                </div>
-              </div>
+              
             </form>
             <div class="row" style="margin-left: 15px; ">
                     <div style="float: left;">
                             <div>
                                 <div class="p-20">
                                     <button type="submit" style="background-color: #FF9934" name="btcreatereport" (click)="create()" value="Foo" id="btcreatereport" class="ladda-button btn btn-primary waves-effect waves-light" data-style="zoom-out">
-                                <span aria-hidden="true"></span><span class="ladda-label">Create Area</span><span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i>
+                                <span aria-hidden="true"></span><span class="ladda-label">Create District</span><span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i>
                                    </span><span class="ladda-spinner"></span></button>
                                 </div>
                             </div>
