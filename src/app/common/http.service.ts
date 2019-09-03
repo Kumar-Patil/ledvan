@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ApiService } from '../common/api.service';
+import { of } from 'rxjs';
+import { Districts, Area } from '../dashboard/district/mock.district';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +22,14 @@ export class HttpService {
 
   public getAll(apiName: any) {
     const requestUrl = this.apiService.API_BASE_URL + apiName;
-    return this.httpClient.get(requestUrl);
+    // return this.httpClient.get(requestUrl);
+    return of(Districts);
+  }
+
+  public getAllArea(apiName: any) {
+    const requestUrl = this.apiService.API_BASE_URL + apiName;
+    // return this.httpClient.get(requestUrl);
+    return of(Area);
   }
 
   public put(apiName: any, id: any, data: any) {
