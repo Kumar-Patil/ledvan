@@ -12,6 +12,7 @@ import { ViewPanelUsersComponent } from './panel-users/view-panel-users/view-pan
 import { DailyReportComponent } from './pdf-reports/daily-report/daily-report.component';
 import { MonthlyReportComponent } from './pdf-reports/monthly-report/monthly-report.component';
 import { UpdateSmtpComponent } from './email-settings/update-smtp/update-smtp.component';
+import { ViewVehiclesComponent } from './led-vehicle-tab/view-vehicles/view-vehicles.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path: 'createVehicle',
         component: CreateVehicleComponent
+      },
+      {
+        path: 'viewVehicle',
+        component: ViewVehiclesComponent
       },
       {
         path: 'createArea',
@@ -61,7 +66,6 @@ const routes: Routes = [
         path: 'updateSMTP',
         component: UpdateSmtpComponent
       }
-
     ]
   }
 ];

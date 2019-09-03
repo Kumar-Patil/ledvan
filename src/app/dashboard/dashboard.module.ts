@@ -27,6 +27,7 @@ import { DailyReportComponent } from './pdf-reports/daily-report/daily-report.co
 import { MonthlyReportComponent } from './pdf-reports/monthly-report/monthly-report.component';
 import { EmailSettingsComponent } from './email-settings/email-settings.component';
 import { UpdateSmtpComponent } from './email-settings/update-smtp/update-smtp.component';
+import { ViewVehiclesComponent } from './led-vehicle-tab/view-vehicles/view-vehicles.component';
 
 @NgModule({
   declarations: [DashboardComponent, MydashboardComponent, DistrictComponent, LedVehicleTabComponent,
@@ -36,7 +37,8 @@ import { UpdateSmtpComponent } from './email-settings/update-smtp/update-smtp.co
     DailyReportComponent,
     MonthlyReportComponent,
     EmailSettingsComponent,
-    UpdateSmtpComponent],
+    UpdateSmtpComponent,
+    ViewVehiclesComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

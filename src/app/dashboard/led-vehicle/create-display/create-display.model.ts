@@ -1,9 +1,32 @@
+import { IMyDateModel } from 'angular-mydatepicker';
+
 export class CreateDisplayRequest {
-    distance: number;
+    distance: string;
     closingTime: any;
-    closingPlace: any;
+    closingPlace: string;
     reportingtime: any;
-    vehicleNum: any;
-    vehicleStayArea: any;
-    model: any;
+    vehicleNo: any;
+    vehicleStayArea: string;
+    createdAt: any;
+    display: Display[];
+    districtAreaName: '';
+    districtName: '';
+    generalHourPictureName: '';
+    id: 0;
+    kilometerPictureName: '';
+    reportDate: '';
+    status: '';
+    updatedAt: '';
+}
+
+export class VehicleNo {
+    id: number;
+    name: string;
+}
+export class Display {
+    displayArea: '';
+    displayPictureName: '';
+    displayTimingFrom: '';
+    displayTimingTo: '';
+    peopleViewed: '';
 }

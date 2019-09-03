@@ -32,7 +32,7 @@
               </mat-card-header>
             </mat-card> -->
         <mat-list-item>
-          <button [routerLink]="'/'" routerLinkActive="active" class="menu-item" mat-flat-button>
+          <button [routerLink]="''" routerLinkActive="active" class="menu-item" mat-flat-button>
             <mat-icon>dashboard</mat-icon>
             Dashboard
           </button>
@@ -40,7 +40,7 @@
 
         <mat-list-item>
           <button [routerLink]="['district']" routerLinkActive="active" class="menu-item" mat-flat-button>
-            <mat-icon>work</mat-icon>
+            <mat-icon>business</mat-icon>
             District
           </button>
         </mat-list-item>
@@ -62,7 +62,7 @@
 
         <mat-list-item>
           <button [matMenuTriggerFor]="area" class="menu-item" mat-flat-button>
-              <mat-icon>settings_application</mat-icon>
+              <mat-icon>room</mat-icon>
               Area
               <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
                   expand_more</mat-icon>
@@ -89,7 +89,7 @@
               <button mat-menu-item [routerLink]="'createVehicle'">Create Vehicle</button>
             </ng-container>
             <ng-container>
-                <button mat-menu-item >View Vehicles</button>
+                <button mat-menu-item [routerLink]="'viewVehicle'">View Vehicles</button>
               </ng-container>
           </mat-menu>
         </mat-list-item>
@@ -113,7 +113,7 @@
 
         <mat-list-item>
           <button [matMenuTriggerFor]="panel_display" class="menu-item" mat-flat-button>
-              <mat-icon>person</mat-icon>
+              <mat-icon>group</mat-icon>
               Panel Users
               <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
                   expand_more</mat-icon>
@@ -130,7 +130,7 @@
 
         <mat-list-item>
             <button [matMenuTriggerFor]="led_display" class="menu-item" mat-flat-button>
-                <mat-icon>note</mat-icon>
+                <mat-icon>tv</mat-icon>
                 Stage Display
                 <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
                     expand_more</mat-icon>
@@ -151,7 +151,7 @@
 
           <mat-list-item>
             <button [matMenuTriggerFor]="pdf_reports" class="menu-item" mat-flat-button>
-                <mat-icon>local_post_office</mat-icon>
+                <mat-icon>picture_as_pdf</mat-icon>
                 PDF Reports
                 <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">
                     expand_more</mat-icon>
