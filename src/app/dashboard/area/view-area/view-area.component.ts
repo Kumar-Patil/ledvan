@@ -27,9 +27,9 @@ export class ViewAreaComponent implements OnInit {
 
   getAllDistricts() {
     this.httpService.getAllArea(this.apiService.API_DISTRICT_API).subscribe((data) => {
-      if (data) {
+      // if (data) {
         this.districts = data;
-      }
+      // }
     }, error => {
       console.log(error);
     });
