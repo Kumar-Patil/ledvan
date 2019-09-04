@@ -20,8 +20,8 @@ export class ViewDistrictComponent implements OnInit {
 
   ngOnInit() {
     this.cols = [
-      { field: 'id', header: 'Id' },
-      { field: 'districtName', header: 'District Name' }
+      { field: 'districtName', header: 'District Name' },
+      { field: 'delete', header: '' },
     ];
     this.getAllDistricts();
   }

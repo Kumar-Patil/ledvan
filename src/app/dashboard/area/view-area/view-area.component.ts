@@ -18,14 +18,15 @@ export class ViewAreaComponent implements OnInit {
 
   ngOnInit() {
     this.cols = [
-      { field: 'id', header: 'Id' },
-      { field: 'districtName', header: 'District Name' }
+      { field: 'areaName', header: 'Area Name' },
+      { field: 'districtName', header: 'District Name' },
+      { field: 'delete', header: '' }
     ];
     this.getAllDistricts();
   }
 
   getAllDistricts() {
-    this.httpService.getAll(this.apiService.API_DISTRICT_API).subscribe((data) => {
+    this.httpService.getAllArea(this.apiService.API_DISTRICT_API).subscribe((data) => {
       if (data) {
         this.districts = data;
       }
