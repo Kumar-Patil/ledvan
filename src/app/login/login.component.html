@@ -1,9 +1,6 @@
-<div id="login-container">
-  <h1 style="text-align:center">
-    User Login
-  </h1>
-  <div class="login">
-    <h2 class="login-header">Log in</h2>
+<div id="login-container" class="d-flex justify-content-center align-items-center">
+  <div class="login" style="position: relative; right: 40px;top:40px;">
+    <h2 class="login-header" style="font-weight: bold">Stage Administration</h2>
     <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
 
       <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">

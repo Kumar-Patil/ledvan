@@ -15,7 +15,7 @@ export class ViewDistrictComponent implements OnInit {
   districts: any;
   cols: any[];
   constructor(private districtService: DistrictService,
-    private httpService: HttpService, private apiService: ApiService
+              private httpService: HttpService, private apiService: ApiService
   ) { }
 
   ngOnInit() {

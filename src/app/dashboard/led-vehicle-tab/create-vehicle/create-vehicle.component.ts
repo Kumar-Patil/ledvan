@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateVehicleComponent implements OnInit {
 
-  options = [{id: 34, description: 'Ranchi: H2334'}, {id: 35, description: 'Gumla: H4232'}, {id: 37, description: 'Bokaro: F2342'}];
+  options = [
+    {id: 34, description: 'Ranchi: H2334'},
+    {id: 35, description: 'Gumla: H4232'},
+    {id: 37, description: 'Bokaro: F2342'}];
   config = {
     displayKey: 'description', // if objects array passed which key to be displayed defaults to description
     search: true, // true/false for the search functionlity defaults to false,

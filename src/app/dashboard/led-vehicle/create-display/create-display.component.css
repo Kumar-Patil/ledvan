@@ -10,3 +10,13 @@ label {
   margin-bottom: 0;
   margin-left: 1px;
 }
+.form-group {
+  margin-bottom: 0px;
+}
+::ng-deep .btn-link {
+  color: #FF9934 !important;
+}
+::ng-deep .btn-outline-primary {
+  color: #FF9934 !important;
+  border-color: #FF9934 !important;
+}

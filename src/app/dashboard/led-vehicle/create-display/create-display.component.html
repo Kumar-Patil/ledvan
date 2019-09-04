@@ -1,94 +1,130 @@
 <div>
-    <h2>Create Display Report</h2>
+  <h3>Create Display Report</h3>
   <div id="create-display">
-  <div class="row">
-    <div class="col-12 col-md-12 col-lg-12" >
-      <div>
-        <h4>
-          DISPLAY REPORT DETAILS
-        </h4>
-      </div>
-      <div>
-        <div class="row">
-          <div class="col-sm-12" style="padding-right: 0px;padding-left: 0px;">
-            <form class="row detail" name="form" #report="ngForm">
-              <div class="col-md-3 col-sm-4 col-xs-6" style="padding-right: 0px;">
-                <div class="form-group is-required-short">
-                  <label class="control-label">Date *</label>
-                  <div class="input-box-container">
-                    <div class="input-group">
-                      <input class="input-box form-control" placeholder="Click to select a date" angular-mydatepicker name="mydate"
-                        (click)="dp.toggleCalendar()" [(ngModel)]="createDisplayRequest.createdAt" [options]="myDpOptions"
-                        #dp="angular-mydatepicker" />
-                      <div class="input-group-append">
-                        <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()">
-                          <i class="fa fa-calendar-o"></i>
-                        </button>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-12">
+        <div>
+          <h5>
+            DISPLAY REPORT DETAILS
+          </h5>
+        </div>
+        <div>
+          <div class="row" style="margin-top: 5px;">
+            <div class="col-sm-12" style="padding-right: 0px;padding-left: 0px;">
+              <form class="row detail" name="form" #report="ngForm">
+                <div class="col-md-3 col-sm-4 col-xs-6" style="padding-right: 0px;">
+                  <div class="form-group is-required-short">
+                    <label class="control-label">Date *</label>
+                    <div class="input-box-container">
+                      <div class="input-group">
+                        <input class="input-box form-control" placeholder="Click to select a date" angular-mydatepicker
+                          name="mydate" (click)="dp.toggleCalendar()" [(ngModel)]="createDisplayRequest.createdAt"
+                          [options]="myDpOptions" #dp="angular-mydatepicker" />
+                        <div class="input-group-append">
+                          <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()" style="background-color: #FF9934; border-color: #FF9934">
+                            <i class="fa fa-calendar-o"></i>
+                          </button>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                  <div class="form-group is-required-short">
+                    <label class="control-label">Vehicle No *</label>
+                    <ngx-select-dropdown (change)="selectionChanged($event)" [config]="config" [options]="options"
+                      [(ngModel)]="createDisplayRequest.vehicleNo" name="vehicleNo"></ngx-select-dropdown>
+
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                  <div class="form-group">
+                    <label class="control-label">Vehicle Stay Area </label>
+                    <input type="text" id="stayArea" name="stayArea" class="form-control"
+                      [(ngModel)]="createDisplayRequest.vehicleStayArea" />
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6" style="position: relative; top: -38px;">
+                  <div class="form-group is-required-short">
+                    <label class="control-label">Reporting Time *</label>
+                    <ngb-timepicker [(ngModel)]="createDisplayRequest.reportingtime" [meridian]="meridian"
+                      name="reportingtime"></ngb-timepicker>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                  <div class="form-group is-required-short">
+                    <label class="control-label">Closing Place *</label>
+                    <input type="text" class="form-control" placeholder="Enter Closing Place" name="closingPlace"
+                      [(ngModel)]="createDisplayRequest.closingPlace" required="true">
+
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6" style="position: relative; top: -38px;">
+                  <div class="form-group is-required-short">
+                    <label class="control-label">Close Time *</label>
+                    <ngb-timepicker [(ngModel)]="createDisplayRequest.closingTime" [meridian]="meridian"
+                      name="closingTime"></ngb-timepicker>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                  <div class="form-group is-required-short">
+                    <label class="control-label">Distance *</label>
+                    <input type="number" id="distance" class="form-control" placeholder="" name="distance"
+                      [(ngModel)]="createDisplayRequest.distance" required="true">
+                  </div>
+                </div>
+
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                </div>
+
+                <div class="col-md-6 col-sm-4 col-xs-6" style="margin-top: -35px;">
+                  <div class="form-group">
+                    <label class="control-label" style="margin-bottom: 10px; padding-top: 0px;">Kilometer Picture</label>
+                    <input type="file" name="uploaddriver" id="uploaddriver" class="filestyle"
+                      data-placeholder="No file" data-classbutton="btn btn-primary"
+                      data-classicon="glyphicon glyphicon-folder-open" tabindex="-1"
+                      style="position: absolute; clip: rect(0px, 0px, 0px, 0px);">
+                    <div class="bootstrap-filestyle input-group"><input type="text" class="form-control "
+                        placeholder="No file" disabled=""> <span class="group-span-filestyle input-group-btn"
+                        tabindex="0"><label for="uploaddriver" class="btn btn-default" style="background-color: #FF9934;border: 1px solid #FF9934; margin-left: -2px;">
+                            <i class="fa fa-folder-open-o" style="padding-right: 5px; color: white"></i>
+                          <span class="buttonText" style="font-size: 15px; color: white;">Choose file</span></label></span></div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-4 col-xs-6" style="margin-top: -35px;">
+                  <div class="form-group">
+                    <label class="control-label" style="margin-bottom: 10px; padding-top: 0px;">Stage Video</label>
+                    <input type="file" name="uploaddriver" id="uploaddriver" class="filestyle"
+                      data-placeholder="No file" data-classbutton="btn btn-primary"
+                      data-classicon="glyphicon glyphicon-folder-open" tabindex="-1"
+                      style="position: absolute; clip: rect(0px, 0px, 0px, 0px);">
+                    <div class="bootstrap-filestyle input-group"><input type="text" class="form-control "
+                        placeholder="No file" disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0">
+                        <label for="uploaddriver" class="btn btn-default " style="background-color: #FF9934;border: 1px solid #FF9934; margin-left: -2px;">
+                            <i class="fa fa-folder-open-o" style="padding-right: 5px; color: white"></i>
+                          <span class="buttonText" style="font-size: 15px; color: white;">Choose file</span></label></span></div>
+                  </div>
+                </div>
+              </form>
+              <div class="row" style="margin-left: 15px; margin-top: 45px;">
+                <div style="float: left;">
+                  <div>
+                    <div class="p-20">
+                      <button type="submit" style="background-color: #FF9934; border-color: #FF9934"
+                        name="btcreatereport" (click)="submitReport()" value="Foo" id="btcreatereport"
+                        class="ladda-button btn btn-primary waves-effect waves-light" data-style="zoom-out">
+                        <span aria-hidden="true"></span><span class="ladda-label">Create Display Report</span><span
+                          class="btn-label btn-label-right">
+                        </span><span class="ladda-spinner"></span></button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-4 col-xs-6">
-                <div class="form-group is-required-short">
-                  <label class="control-label">Vehicle No *</label>
-                    <ngx-select-dropdown (change)="selectionChanged($event)" [config]="config" [options]="options" [(ngModel)]="createDisplayRequest.vehicleNo" name="vehicleNo"></ngx-select-dropdown>
-                  
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 col-xs-6">
-                <div class="form-group">
-                  <label class="control-label">Vehicle Stay Area </label>
-                  <input type="text" id="stayArea" name="stayArea" class="form-control" [(ngModel)]="createDisplayRequest.vehicleStayArea"/>    
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 col-xs-6" style="position: relative; top: -38px;">
-                <div class="form-group is-required-short">
-                  <label class="control-label">Reporting Time *</label>
-                  <ngb-timepicker [(ngModel)]="createDisplayRequest.reportingtime" [meridian]="meridian" name="reportingtime"></ngb-timepicker>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 col-xs-6">
-                <div class="form-group is-required-short">
-                  <label class="control-label">Closing Place *</label>
-                  <input type="text" class="form-control" placeholder="Enter Closing Place" name="closingPlace"
-                  [(ngModel)]="createDisplayRequest.closingPlace" required="true">
-    
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 col-xs-6" style="position: relative; top: -38px;">
-                <div class="form-group is-required-short">
-                  <label class="control-label">Close Time *</label>
-                  <ngb-timepicker [(ngModel)]="createDisplayRequest.closingTime" [meridian]="meridian" name="closingTime"></ngb-timepicker>
-                </div>
-              </div>
-              <div class="col-md-3 col-sm-4 col-xs-6" >
-                <div class="form-group is-required-short">
-                  <label class="control-label">Distance *</label>
-                  <input type="number" id="distance" class="form-control" placeholder="" name="distance"
-                  [(ngModel)]="createDisplayRequest.distance" required="true">
-                </div>
-                
-                
-              </div>
-              
-            </form>
-            <div class="row" style="margin-left: 15px; ">
-                    <div style="float: left;">
-                            <div>
-                                <div class="p-20">
-                                    <button type="submit" style="background-color: #FF9934; border-color: tomato" name="btcreatereport" (click)="submitReport()" value="Foo" id="btcreatereport" class="ladda-button btn btn-primary waves-effect waves-light" data-style="zoom-out">
-                                <span aria-hidden="true"></span><span class="ladda-label">Create Display Report</span><span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i>
-                                   </span><span class="ladda-spinner"></span></button>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

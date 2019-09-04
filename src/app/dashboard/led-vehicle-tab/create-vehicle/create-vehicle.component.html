@@ -1,8 +1,8 @@
 <div class="container">
-        <h4>
+        <h4 style="float: left">
                 VEHICLE DETAILS
         </h4>  
-<form class="create-vehicle-form">
+<form class="create-vehicle-form" style="float: left;margin-top: 20px; margin-left: 20px;">
     <div class="row">
       <br>
       <div class="col-lg-6">
@@ -28,9 +28,10 @@
               data-classbutton="btn btn-primary" data-classicon="glyphicon glyphicon-folder-open" tabindex="-1"
               style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"  [(ngModel)]="vehicle.driverPicture">
             <div class="bootstrap-filestyle input-group"><input type="text" class="form-control " placeholder="No file"
-                disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0"><label for="uploaddriver"
-                  class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span>
-                  <span class="buttonText">Choose file</span></label></span></div>
+                disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0"><label for="uploaddriver" 
+                  style="background-color: #FF9934;border: 1px solid #FF9934; margin-left: -2px;" class="btn btn-default ">
+                  <i class="fa fa-folder-open-o" style="padding-right: 5px; color: white"></i>
+                  <span class="buttonText" style="font-size: 15px; color: white;">Choose file</span></label></span></div>
           </div>
           <div class="form-group">
             <label class="control-label" style="margin-bottom: 10px; padding-top: 0px;">Operator's Picture</label>
@@ -38,15 +39,17 @@
               data-classbutton="btn btn-primary" data-classicon="glyphicon glyphicon-folder-open" tabindex="-1"
               style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"  [(ngModel)]="vehicle.operatorPicture">
             <div class="bootstrap-filestyle input-group"><input type="text" class="form-control " placeholder="No file"
-                disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0"><label for="uploadoperator"
-                  class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span>
-                  <span class="buttonText">Choose file</span></label></span></div>
+                disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0"><label for="uploadoperator" 
+                  style="background-color: #FF9934;border: 1px solid #FF9934; margin-left: -2px;" class="btn btn-default ">
+                  <i class="fa fa-folder-open-o" style="padding-right: 5px; color: white"></i>
+                  <span class="buttonText" style="font-size: 15px; color: white;">Choose file</span></label></span></div>
           </div>
           <br>
-          <button type="submit" name="btcreatevehicle" value="Foo" id="btcreatevehicle"
+          <button type="submit" style="background-color: #FF9934; border-color: #FF9934; margin-bottom: 40px;" 
+            name="btcreatevehicle" value="Foo" id="btcreatevehicle"
             class="ladda-button btn btn-primary float-left" data-style="zoom-out" (click)="createVehicle()">
             <span aria-hidden="true"></span><span class="ladda-label">Create New Vehicle  </span><span
-              class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i>
+              class="btn-label btn-label-right">
             </span></button>
         </div>
       </div>

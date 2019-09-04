@@ -1,1 +1,90 @@
-<p>daily-report works!</p>
+<div>
+  <div style="float: left;">
+    <h3>Daily Reports</h3>
+  </div>
+
+  <div id="create-display" style="float: left;margin-left: 20px;">
+    <div class="row" style="clear: both; margin-right: 0px; margin-left: 0px; ">
+      <div class="col-12 col-md-12 col-lg-12" style="border: 1px solid antiquewhite;padding: 10px;">
+        <div  style="float: left;">
+          <h5>
+            EMAIL DETAILS
+          </h5>
+        </div>
+        <div  style="float: left;">
+          <div class="row" style="margin-top: 5px;">
+            <div class="col-sm-12 col-md-12 col-xs-12">
+              <form class="row detail" name="form" #report="ngForm" style="margin-right: 0px; margin-left: 0px;">
+                <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                  <div class="form-group is-required-short">
+                    <label class="control-label">To Address *</label>
+                    <div class="input-box-container">
+                      <div class="input-group">
+                        <input class="input-box form-control" placeholder="Click to select a date" angular-mydatepicker
+                          name="mydate" (click)="dp.toggleCalendar()" [(ngModel)]="date" [options]="myDpOptions"
+                          #dp="angular-mydatepicker" />
+                        <div class="input-group-append">
+                          <button type="button" class="btn btn-secondary" (click)="dp.toggleCalendar()"
+                            style="background-color: #FF9934; border-color: #FF9934">
+                            <i class="fa fa-calendar-o"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="form-group is-required-short">
+                    <label class="control-label">Report Date *</label>
+                    <input type="text" id="stayArea" name="stayAreaq" class="form-control" />
+
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="form-group">
+                    <label class="control-label">Email Subject * </label>
+                    <input type="text" id="stayArea" name="stayArea" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                  <div class="form-group is-required-short">
+                    <label class="control-label">Email Content *</label>
+                    <textarea name="tbvehicledetail" rows="6" cols="20" id="tbvehicledetail" class="form-control"
+                      placeholder="Enter Vehicle Details"></textarea>
+                  </div>
+                </div>
+              </form>
+              <div class="row" style="margin-left: 15px; margin-top: 45px;">
+                <div style="float: left;margin-right: 40px;">
+                  <div>
+                    <div class="p-20">
+                      <button type="submit" style="background-color: #FF9934; border-color: #FF9934"
+                        name="btcreatereport" (click)="submitReport()" value="Foo" id="btcreatereport"
+                        class="ladda-button btn btn-primary waves-effect waves-light" data-style="zoom-out">
+                        <span aria-hidden="true"></span><span class="ladda-label">View pdf</span><span
+                          class="btn-label btn-label-right">
+                        </span><span class="ladda-spinner"></span></button>
+                    </div>
+                  </div>
+                </div>
+                <div style="float: left;">
+                        <div>
+                          <div class="p-20">
+                            <button type="submit" style="background-color: #FF9934; border-color: #FF9934"
+                              name="btcreatereport" (click)="submitReport()" value="Foo" id="btcreatereport"
+                              class="ladda-button btn btn-primary waves-effect waves-light" data-style="zoom-out">
+                              <span aria-hidden="true"></span><span class="ladda-label">Send Email</span><span
+                                class="btn-label btn-label-right">
+                              </span><span class="ladda-spinner"></span></button>
+                          </div>
+                        </div>
+                      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
