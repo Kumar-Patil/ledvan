@@ -16,4 +16,9 @@ export class ApiService {
   public API_REVIEWED_REPORT_COUNT = 'dashboard/reportcount/revieddreport';
   public API_UNREVIEWED_REPORT_COUNT = 'dashboard/reportcount/unreviedreport';
   public API_VEHICLE_COUNT = 'dashboard/vechiclecount';
+
+  // Panel Users APIs
+
+  public API_PANEL_USERS = 'paneluser';
+
 }
