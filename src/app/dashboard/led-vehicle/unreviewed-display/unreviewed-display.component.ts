@@ -3,8 +3,7 @@ import {LedVehicleService} from '../led-vehicle.service';
 @Component({
     selector: 'app-unreviewed-display',
     templateUrl: './unreviewed-display.component.html',
-    styleUrls: ['./unreviewed-display.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./unreviewed-display.component.css']
 })
 export class UnreviewedDisplayComponent implements OnInit {
 
@@ -17,16 +16,17 @@ export class UnreviewedDisplayComponent implements OnInit {
     }
     ngOnInit() {
 
+        this.cols = [
+            { field: 'reportDate', header: 'Date' },
+            { field: 'districtAreaName', header: 'Area' },
+            { field: 'vechicleNo', header: 'Vehicle No' },
+            { field: 'reportingTime', header: 'Display Time' },
+            { field: 'delete', header: '' },
+        ];
+
         this.ledVehicleService.getUnreviewedDisplays().subscribe(res => {
             this.users = res;
         });
-        this.cols = [
-            { field: 'reportDate', header: 'Date' },
-            { field: 'area', header: 'Area' },
-            { field: 'vehicle', header: 'Vehicle No' },
-            { field: 'displayTime', header: 'Display Time' },
-            { field: 'delete', header: '' },
-        ];
     }
 
     /**

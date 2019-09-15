@@ -21,4 +21,11 @@ export class ApiService {
 
   public API_PANEL_USERS = 'paneluser';
 
+
+  // LED Display APIs
+
+  public API_LED_DISPLAY = 'leddisplay';
+  public API_LED_DISPLAY_REVIEWED = 'leddisplay/reviewed';
+  public API_LED_DISPLAY_UN_REVIEWED = 'leddisplay/unReviewed';
+
 }
