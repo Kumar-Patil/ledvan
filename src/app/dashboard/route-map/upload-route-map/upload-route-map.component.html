@@ -1,1 +1,61 @@
-<p>upload-route-map works!</p>
+<div>
+    <div style="float: left;margin-bottom: 20px;">
+      <h3>Upload Route Map</h3>
+    </div>
+  
+    <div id="create-display" style="margin-left: 20px;">
+      <div class="row" style="clear: both; margin-right: 0px; margin-left: 0px; ">
+        <div class="col-12 col-md-12 col-lg-12" style="border: 1px solid antiquewhite;padding: 10px;">
+          <div  style="float: left;margin-bottom: 20px;">
+            <h5>
+               ROUTE MAP DETAILS
+            </h5>
+          </div>
+          <div  style="clear: both;">
+            <div class="row" style="margin-top: 5px;">
+              <div class="col-sm-12 col-md-12 col-xs-12">
+                <form class="row detail" name="form" #report="ngForm" style="margin-right: 0px; margin-left: 0px;">
+                  <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right: 0px;">
+                    <div class="form-group is-required-short">
+                      <label class="control-label">PDF File</label>
+                      <input type="file" name="uploadoperator" id="uploadoperator" class="filestyle" data-placeholder="No file"
+              data-classbutton="btn btn-primary" data-classicon="glyphicon glyphicon-folder-open" tabindex="-1"
+              style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"  [(ngModel)]="pdfFile">
+            <div class="bootstrap-filestyle input-group"><input type="text" class="form-control " placeholder="No file"
+                disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0"><label for="uploadoperator" 
+                  style="background-color: #FF9934;border: 1px solid #FF9934; margin-left: -2px;" class="btn btn-default ">
+                  <i class="fa fa-folder-open-o" style="padding-right: 5px; color: white"></i>
+                  <span class="buttonText" style="font-size: 15px; color: white;">Choose file</span></label></span></div>
+  
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-6">
+                    <div class="form-group is-required-short">
+                      <label class="control-label">District Name </label>
+                      <ngx-select-dropdown (change)="selectionChanged($event)" [config]="config" [options]="options"
+                            [(ngModel)]="districtName" name="vehicleNo"></ngx-select-dropdown>
+                    </div>
+                  </div>
+                </form>
+                <div class="row" style="margin-left: 15px; margin-top: 45px;">
+                  <div style="float: left; margin-right: 40px;">
+                    <div>
+                      <div class="p-20">
+                        <button type="submit" style="background-color: #FF9934; border-color: #FF9934"
+                          name="btcreatereport" (click)="submitReport()" value="Foo" id="btcreatereport"
+                          class="ladda-button btn btn-primary waves-effect waves-light" data-style="zoom-out">
+                          <span aria-hidden="true"></span><span class="ladda-label">Upload Route</span><span
+                            class="btn-label btn-label-right">
+                          </span><span class="ladda-spinner"></span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
