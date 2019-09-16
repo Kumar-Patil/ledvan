@@ -26,9 +26,9 @@
       <tr>
         <td *ngFor="let col of columns" [ngSwitch]="col.field">
           <span *ngSwitchDefault> {{user[col.field]}} </span>
-          <span *ngSwitchCase="'review'">
-            <span *ngIf="user[col.field] == 'approved'" class="badge badge-success badge-padding">Approved</span>
-            <span *ngIf="user[col.field] == 'not_approved'" class="badge badge-warning badge-padding">Not
+          <span *ngSwitchCase="'status'">
+            <span *ngIf="user[col.field].toLowerCase() === 'approved'" class="badge badge-success badge-padding">Approved</span>
+            <span *ngIf="user[col.field].toLowerCase() !== 'approved'" class="badge badge-warning badge-padding">Not
               Approved</span>
           </span>
         </td>

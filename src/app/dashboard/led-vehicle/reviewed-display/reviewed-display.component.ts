@@ -17,10 +17,10 @@ export class ReviewedDisplayComponent implements OnInit {
     });
     this.cols = [
         { field: 'reportDate', header: 'Date' },
-        { field: 'area', header: 'Area' },
-        { field: 'vehicle', header: 'Vehicle No' },
-        { field: 'displayTime', header: 'Display Time' },
-        { field: 'review', header: 'Reviews' },
+        { field: 'vechicleStayArea', header: 'Area' },
+        { field: 'vechicleNo', header: 'Vehicle No' },
+        { field: 'reportingTime', header: 'Display Time' },
+        { field: 'status', header: 'Reviews' },
     ];
   }
 
