@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Unreviewed } from './mock.unreviewed';
 import { Reviewed } from './mock.reviewed';
+import { ApiService } from 'src/app/common/api.service';
 
 
 @Injectable({
@@ -10,23 +11,30 @@ import { Reviewed } from './mock.reviewed';
 })
 export class LedVehicleService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient, private apiService: ApiService) { }
 
   createReport(report: any): Observable<any> {
-
-    return of({});
+    const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_LED_DISPLAY;
+    return this.httpClient.post(requestUrl, report);
+    // return of({});
   }
 
   getUnreviewedDisplays(): Observable<any> {
-    return of(Unreviewed);
+    const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_LED_DISPLAY_UN_REVIEWED;
+    return this.httpClient.get(requestUrl);
+    // return of(Unreviewed);
   }
 
-  
+
   getReviewedDisplays(): Observable<any> {
-    return of(Reviewed);
+    const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_LED_DISPLAY_REVIEWED;
+    return this.httpClient.get(requestUrl);
+    // return of(Reviewed);
   }
 
   deleteUser(user: any): Observable<any> {
-    return of();
+    const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_LED_DISPLAY + '/'+user.id;
+    return this.httpClient.delete(requestUrl);
+    // return of();
   }
 }

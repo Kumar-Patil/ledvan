@@ -8,4 +8,24 @@ export class ApiService {
   // District API
   public API_DISTRICT_API = 'district';
   public API_AREA_API = 'area';
+
+  //Dashboard APIs
+  public API_AREA_COUNT = 'dashboard/areacount';
+  public API_DISTRICT_COUNT = 'dashboard/districtcount';
+  public API_PANEL_USER_COUNT = 'dashboard/panelusercount';
+  public API_REVIEWED_REPORT_COUNT = 'dashboard/reportcount/revieddreport';
+  public API_UNREVIEWED_REPORT_COUNT = 'dashboard/reportcount/unreviedreport';
+  public API_VEHICLE_COUNT = 'dashboard/vechiclecount';
+
+  // Panel Users APIs
+
+  public API_PANEL_USERS = 'paneluser';
+
+
+  // LED Display APIs
+
+  public API_LED_DISPLAY = 'leddisplay';
+  public API_LED_DISPLAY_REVIEWED = 'leddisplay/reviewed';
+  public API_LED_DISPLAY_UN_REVIEWED = 'leddisplay/unReviewed';
+
 }

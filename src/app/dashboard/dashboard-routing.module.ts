@@ -9,6 +9,8 @@ import { DailyReportComponent } from './pdf-reports/daily-report/daily-report.co
 import { MonthlyReportComponent } from './pdf-reports/monthly-report/monthly-report.component';
 import { UpdateSmtpComponent } from './email-settings/update-smtp/update-smtp.component';
 import { ViewVehiclesComponent } from './led-vehicle-tab/view-vehicles/view-vehicles.component';
+import { UploadRouteMapComponent } from './route-map/upload-route-map/upload-route-map.component';
+import { ViewRoutesComponent } from './route-map/view-routes/view-routes.component';
 
 const routes: Routes = [
   {
@@ -57,6 +59,14 @@ const routes: Routes = [
       {
         path: 'viewVehicle',
         component: ViewVehiclesComponent
+      },
+      {
+        path: 'uploadRouteMap',
+        component: UploadRouteMapComponent
+      },
+      {
+        path: 'viewRoutes',
+        component: ViewRoutesComponent
       }
     ]
   }

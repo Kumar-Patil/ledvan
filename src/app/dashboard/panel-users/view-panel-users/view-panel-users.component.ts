@@ -18,11 +18,15 @@ export class ViewPanelUsersComponent implements OnInit {
       this.users = res;
     });
     this.cols = [
-        { field: 'email', header: 'Email' },
-        { field: 'password', header: 'Password' },
-        { field: 'district', header: 'District' },
-        { field: 'mobile', header: 'Mobile' },
-        { field: 'delete', header: '' },
+      { field: 'email', header: 'Email' },
+      { field: 'password', header: 'Password' },
+      { field: 'district', header: 'District' },
+      { field: 'mobile', header: 'Mobile' },
+      { field: 'delete', header: '' },
     ];
+  }
+
+  deleteUser(user: any) {
+    this.panelUsersService.deletePanelUser(user.id);
   }
 }

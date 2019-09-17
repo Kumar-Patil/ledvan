@@ -25,7 +25,7 @@ import { EmailSettingsComponent } from './email-settings/email-settings.componen
 import { UpdateSmtpComponent } from './email-settings/update-smtp/update-smtp.component';
 import {PaginatorModule} from 'primeng/paginator';
 import { ViewVehiclesComponent } from './led-vehicle-tab/view-vehicles/view-vehicles.component';
-
+import { SelectDropDownModule } from 'ngx-select-dropdown';
 @NgModule({
   declarations: [DashboardComponent, MydashboardComponent, LedVehicleTabComponent,
     CreateVehicleComponent, RouteMapComponent,
@@ -44,7 +44,8 @@ import { ViewVehiclesComponent } from './led-vehicle-tab/view-vehicles/view-vehi
     FormsModule,
     HttpClientModule,
     TableModule,
-    PaginatorModule
+    PaginatorModule,
+    SelectDropDownModule
   ]
 })
 export class DashboardModule { }
