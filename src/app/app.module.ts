@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { CalendarModule, SharedModule} from 'primeng/primeng';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { AlertModule } from './_alert';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { CalendarModule, SharedModule} from 'primeng/primeng';
     RouterModule,
     HttpClientModule,
     TableModule,
-    SharedModule
+    SharedModule,
+    NgxSpinnerModule,
+    AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]
