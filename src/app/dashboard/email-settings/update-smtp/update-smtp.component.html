@@ -1,1 +1,91 @@
-<p>update-smtp works!</p>
+<div class="content">
+  <div class="container">
+    <!-- Page-Title -->
+    <div class="row" style="float: left;">
+      <div class="col-sm-12">
+        <h4 class="page-title">Update SMTP Settings</h4>
+      </div>
+    </div>
+    <div class="row" style="clear: both;">
+      <div class="col-md-6 col-lg-12">
+        <div class="card-box">
+          <div class="">
+            <h5 style="float: left;padding-bottom: 20px;" class="p-l-r-10 text-dark header-title m-t-0">SMTP Details</h5>
+            <br>
+            <div class="row" style="clear: both;">
+              <div class="col-lg-4">
+                <div class="p-20">
+                  <div class="form-group">
+                    <label style="margin-bottom: 10px">Host Name</label>
+                    <input name="tbhostname" type="text" value="smtp.gmail.com" id="tbhostname" class="form-control"
+                      required="" placeholder="Enter Host Name">
+                  </div>
+                  <div class="form-group">
+                    <label style="margin-bottom: 10px">From Email</label>
+                    <input name="tbfromemail" value="iprdjharkhandledvan@gmail.com" id="tbfromemail"
+                      class="form-control" required="" placeholder="Enter Email Address" type="email">
+                  </div>
+                  <div class="form-group">
+                    <label style="margin-bottom: 10px">To Email</label>
+                    <input name="tbtoemail" value="wasim@wasimjee.com" id="tbtoemail" class="form-control" required=""
+                      placeholder="Enter Email Address" type="email">
+                  </div>
+                  <br>
+                  <button type="submit" name="btupdatesmtp" value="Foo" id="btupdatesmtp" style="background-color: #FF9934; border-color: #FF9934; float: left;"
+                    class="ladda-button btn btn-primary waves-effect waves-light" data-style="zoom-out">
+                    <span aria-hidden="true"></span><span class="ladda-label">Update SMTP</span><span
+                      class="btn-label btn-label-right">
+                    </span><span class="ladda-spinner"></span></button>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="p-20">
+                  <div class="form-group">
+                    <label style="margin-bottom: 10px">Host Port</label>
+                    <input name="tbhostport" value="587" id="tbhostport" class="form-control" required=""
+                      placeholder="Enter Host Port" type="number">
+                  </div>
+                  <div class="form-group">
+                    <label style="margin-bottom: 10px">From Name</label>
+                    <input name="tbfromname" type="text" value="IRPD Jharkhand LED Van" id="tbfromname"
+                      class="form-control" required="" placeholder="Enter From Name">
+                  </div>
+                  <div class="form-group">
+                    <label style="margin-bottom: 10px">Default Email Subject</label>
+                    <input name="tbemailsubject" type="text" value="IRPD Jharkhand LED Van Report" id="tbemailsubject"
+                      class="form-control" required="" placeholder="Enter Email Subject">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="p-20">
+                  <div class="form-group">
+                    <label style="margin-bottom: 10px">Use SSL</label>
+                    <div class="form-control" style="border: none !important; padding-top: 0px;clear: both;">
+                      <span class="form-check checkbox checkbox-warning"><input id="cbssl" type="checkbox" name="cbssl"
+                          checked="checked"><label for="cbssl"> Connect with SSL</label></span>
+                    </div>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label style="margin-bottom: 10px">Email Password</label>
+                    <input name="tbpassword" type="text" value="Ranchi@123" id="tbpassword" class="form-control"
+                      required="" placeholder="Enter Password">
+                  </div>
+                  <div class="form-group">
+                    <label style="margin-bottom: 10px">Default Email Body</label>
+                    <textarea name="tbemailbody" rows="3" cols="20" id="tbemailbody" class="form-control" required=""
+                      placeholder="Enter Email Body">Please find the report in the attachment as a pdf file.</textarea>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- container -->
+</div>
