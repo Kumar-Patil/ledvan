@@ -1,3 +1,4 @@
+<ngx-spinner></ngx-spinner>
 <div id="create-district">
   <div class="row">
     <div class="col-12 col-md-12 col-lg-12" >
@@ -20,7 +21,7 @@
               <div class="col-md-3 col-sm-4 col-xs-6">
                 <div class="form-group is-required-short">
                   <label class="control-label">District Name *</label>
-                    <ngx-select-dropdown (change)="selectionChanged($event)" [config]="config" [options]="options" [(ngModel)]="districtName" name="districtName"></ngx-select-dropdown>
+                    <ngx-select-dropdown (change)="selectionChanged($event)" [config]="config" [options]="options" [(ngModel)]="areaDetails" name="areaDetails"></ngx-select-dropdown>
                   
                 </div>
               </div>
@@ -30,7 +31,7 @@
                             <div>
                                 <div class="p-20">
                                     <button type="submit" style="background-color: #FF9934" name="btcreatereport" (click)="create()" value="Foo" id="btcreatereport" class="ladda-button btn btn-primary waves-effect waves-light" data-style="zoom-out">
-                                <span aria-hidden="true"></span><span class="ladda-label">Create Area</span><span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i>
+                                <span aria-hidden="true"></span><span class="ladda-label">{{createUpdate}}</span><span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i>
                                    </span><span class="ladda-spinner"></span></button>
                                 </div>
                             </div>

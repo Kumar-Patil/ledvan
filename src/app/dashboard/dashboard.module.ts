@@ -26,6 +26,9 @@ import { UpdateSmtpComponent } from './email-settings/update-smtp/update-smtp.co
 import {PaginatorModule} from 'primeng/paginator';
 import { ViewVehiclesComponent } from './led-vehicle-tab/view-vehicles/view-vehicles.component';
 import { SelectDropDownModule } from 'ngx-select-dropdown';
+import { ConfirmationDialogComponent } from './../confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialogService } from './../confirmation-dialog/confirmation-dialog.service';
+
 @NgModule({
   declarations: [DashboardComponent, MydashboardComponent, LedVehicleTabComponent,
     CreateVehicleComponent, RouteMapComponent,
@@ -35,7 +38,8 @@ import { SelectDropDownModule } from 'ngx-select-dropdown';
     MonthlyReportComponent,
     EmailSettingsComponent,
     UpdateSmtpComponent,
-    ViewVehiclesComponent],
+    ViewVehiclesComponent,
+    ConfirmationDialogComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -46,6 +50,8 @@ import { SelectDropDownModule } from 'ngx-select-dropdown';
     TableModule,
     PaginatorModule,
     SelectDropDownModule
-  ]
+  ],
+  providers: [ ConfirmationDialogService ],
+  entryComponents: [ ConfirmationDialogComponent ]
 })
 export class DashboardModule { }

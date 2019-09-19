@@ -17,6 +17,10 @@ const routes: Routes = [
         component: ViewAreaComponent
       },
       {
+        path: 'viewarea/area/:id',
+        component: CreateAreaComponent
+      },
+      {
         path: '', redirectTo: 'createDisplay', pathMatch: 'full'
       },
     ]

@@ -28,4 +28,7 @@ export class ApiService {
   public API_LED_DISPLAY_REVIEWED = 'leddisplay/reviewed';
   public API_LED_DISPLAY_UN_REVIEWED = 'leddisplay/unReviewed';
 
+  // SMTP
+  public API_SMTP = 'smtp';
+
 }

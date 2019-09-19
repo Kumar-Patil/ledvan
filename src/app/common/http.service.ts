@@ -22,8 +22,8 @@ export class HttpService {
 
   public getAll(apiName: any) {
     const requestUrl = this.apiService.API_BASE_URL + apiName;
-    // return this.httpClient.get(requestUrl);
-    return of(Districts);
+    return this.httpClient.get(requestUrl);
+    // return of(Districts);
   }
 
   public getAllArea(apiName: any) {

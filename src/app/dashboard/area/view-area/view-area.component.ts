@@ -2,6 +2,10 @@ import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ChangeDetectorRe
 import { NgForm } from '@angular/forms';
 import { HttpService } from '../../../common/http.service';
 import { ApiService } from '../../../common/api.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ConfirmationDialogService } from '../../../confirmation-dialog/confirmation-dialog.service';
+import { AlertService } from '../../../_alert';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-display',
@@ -11,39 +15,64 @@ import { ApiService } from '../../../common/api.service';
 })
 export class ViewAreaComponent implements OnInit {
 
-  districts: any;
+  areas: any;
   cols: any[];
-  constructor(private httpService: HttpService, private apiService: ApiService
+  constructor(private httpService: HttpService, private apiService: ApiService,
+    private spinner: NgxSpinnerService,
+    private confirmationDialogService: ConfirmationDialogService,
+    private alertService: AlertService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.cols = [
       { field: 'areaName', header: 'Area Name' },
       { field: 'districtName', header: 'District Name' },
       { field: 'delete', header: '' }
     ];
-    this.getAllDistricts();
+    this.getAllAreas();
   }
 
-  getAllDistricts() {
-    this.httpService.getAllArea(this.apiService.API_DISTRICT_API).subscribe((data) => {
-      // if (data) {
-        this.districts = data;
-      // }
+  getAllAreas() {
+    this.httpService.getAll(this.apiService.API_AREA_API).subscribe((data) => {
+      if (data) {
+        this.areas = data;
+        this.spinner.hide();
+      }
     }, error => {
+      this.autoHideMessage();
+      this.alertService.error('Error while fetching area!');
       console.log(error);
     });
   }
-  delete() {
-    console.log('Delete here');
+  delete(area) {
+    this.openConfirmationDialog(area);
   }
-
-  edit() {
-    console.log('Delete here');
+  public openConfirmationDialog(area: any) {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to delete?')
+      .then((confirmed) => this.deleteById(confirmed, area))
+      .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
   }
-
-}
-export interface District {
-  id;
-  districtName;
+  deleteById(confirmed, area: any) {
+    if (confirmed) {
+      this.httpService.delete(this.apiService.API_AREA_API, area.id).subscribe((data) => {
+        if (data) {
+          this.alertService.success('Area deleted successfully');
+          this.autoHideMessage();
+        }
+      }, error => {
+        this.alertService.error('Error while Area district {}' + area.areaName);
+        this.autoHideMessage();
+        console.log(error);
+      });
+    }
+  }
+  autoHideMessage() {
+    setTimeout(() => {
+      this.alertService.clear();
+      this.getAllAreas();
+    }, 1000);
+  }
 }

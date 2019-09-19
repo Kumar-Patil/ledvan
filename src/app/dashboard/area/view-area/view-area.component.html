@@ -1,5 +1,6 @@
+<ngx-spinner></ngx-spinner>
 <div><h2>View Areas</h2>
-<p-table [columns]="cols" [value]="districts" sortMode="multiple" [paginator]="true" [rows]="10" #dt>
+<p-table [columns]="cols" [value]="areas" sortMode="multiple" [paginator]="true" [rows]="10" #dt>
     <ng-template pTemplate="caption">
         <div style="text-align: right">        
             <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
@@ -22,7 +23,7 @@
     <ng-template pTemplate="body" let-user let-columns="columns">
       <tr> 
       <td *ngFor="let col of columns" [ngSwitch]="col.field">
-        <span *ngSwitchDefault> {{user[col.field]}} </span>
+        <span *ngSwitchDefault> <a routerLink="area/{{user.id}}">{{user[col.field]}}</a></span>
         <button *ngSwitchCase="'delete'" type="button" class="btn btn-danger btn-sm" (click)="delete(user)">Delete</button> 
       </td>
     </tr>

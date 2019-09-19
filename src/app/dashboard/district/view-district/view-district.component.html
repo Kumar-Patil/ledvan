@@ -1,5 +1,8 @@
-<div><h2>View District</h2>
-<p-table [columns]="cols" [value]="districts" sortMode="multiple" [paginator]="true" [rows]="10" #dt>
+<ngx-spinner></ngx-spinner>
+<div>
+  
+  <h2>View District </h2>
+  <p-table [columns]="cols" [value]="districts" sortMode="multiple" [paginator]="true" [rows]="10" #dt>
     <!-- <ng-template pTemplate="caption">
         <div style="text-align: right">        
             <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
@@ -15,16 +18,18 @@
       </tr>
       <tr>
         <th *ngFor="let col of columns" [ngSwitch]="col.field">
-          <input *ngSwitchDefault pInputText type="text" (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+          <input *ngSwitchDefault pInputText type="text"
+            (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
           <span *ngSwitchCase="'delete'"></span>
         </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-user let-columns="columns">
-      <tr> 
+      <tr>
         <td *ngFor="let col of columns" [ngSwitch]="col.field">
-          <span *ngSwitchDefault> {{user[col.field]}} </span>
-          <button *ngSwitchCase="'delete'" type="button" class="btn btn-danger btn-sm" (click)="delete(user)">Delete</button> 
+          <span *ngSwitchDefault> <a routerLink="district/{{user.id}}">{{user[col.field]}}</a> </span>
+          <button *ngSwitchCase="'delete'" type="button" class="btn btn-danger btn-sm"
+            (click)="delete(user)">Delete</button>
         </td>
       </tr>
     </ng-template>

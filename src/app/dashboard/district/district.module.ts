@@ -11,9 +11,10 @@ import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { ViewDistrictComponent } from './view-district/view-district.component';
-
+import { ConfirmationDialogService } from './../../confirmation-dialog/confirmation-dialog.service';
+import { AlertModule } from '../../_alert';
 @NgModule({
   declarations: [DistrictComponent, CreateDistrictComponent, ViewDistrictComponent],
   imports: [
@@ -25,7 +26,10 @@ import { ViewDistrictComponent } from './view-district/view-district.component';
     SelectDropDownModule,
     HttpClientModule,
     TableModule,
-    PaginatorModule
-  ]
+    PaginatorModule,
+    NgxSpinnerModule,
+    AlertModule
+  ],
+  providers: [ ConfirmationDialogService ]
 })
 export class DistrictModule { }

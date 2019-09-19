@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { AlertModule } from './_alert';
 import { CalendarModule, SharedModule } from 'primeng/primeng';
 import { DashBoardService } from './dashboard/dashboard.service';
 @NgModule({

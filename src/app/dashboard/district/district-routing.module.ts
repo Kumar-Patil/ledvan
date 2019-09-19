@@ -18,6 +18,10 @@ const routes: Routes = [
         component: ViewDistrictComponent
       },
       {
+        path: 'viewDistrict/district/:id',
+        component: CreateDistrictComponent
+      },
+      {
         path: '', redirectTo: 'createDisplay', pathMatch: 'full'
       },
     ]

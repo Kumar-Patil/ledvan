@@ -11,9 +11,9 @@ import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { ViewAreaComponent } from './view-area/view-area.component';
-
+import { ConfirmationDialogService } from './../../confirmation-dialog/confirmation-dialog.service';
 @NgModule({
   declarations: [AreaComponent, CreateAreaComponent, ViewAreaComponent],
   imports: [
@@ -26,6 +26,8 @@ import { ViewAreaComponent } from './view-area/view-area.component';
     HttpClientModule,
     TableModule,
     PaginatorModule,
-  ]
+    NgxSpinnerModule
+  ],
+  providers: [ ConfirmationDialogService ]
 })
 export class AreaModule { }
