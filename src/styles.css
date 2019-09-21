@@ -78,3 +78,15 @@ body {
   .alarm-dropdown /deep/.mat-select-arrow-wrapper {
     visibility: hidden;
   }
+
+  .unique-color {
+    background-color: #FF7530 !important;
+  }
+
+
+body .ui-paginator .ui-paginator-pages .ui-paginator-page.ui-state-active {
+    background-color: white !important;
+    color: black !important;
+    border: 1px !important;
+    border-color: black !important;
+  }

@@ -14,17 +14,17 @@ export class PanelUsersService {
 
     getPanelUsers(): Observable<any> {
         // return of(PanelUsers);
-        const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_PANEL_USER_COUNT;
+        const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_PANEL_USERS;
         return this.httpClient.get(requestUrl);
     }
 
     createPanelUser(data: any) {
-        const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_PANEL_USER_COUNT;
+        const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_PANEL_USERS;
         return this.httpClient.post(requestUrl, data);
     }
 
     deletePanelUser(id: string): Observable<any> {
-        const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_PANEL_USER_COUNT + '/' +id;
+        const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_PANEL_USERS + '/' +id;
         return this.httpClient.delete(requestUrl);
     }
 

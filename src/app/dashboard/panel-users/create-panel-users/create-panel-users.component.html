@@ -3,52 +3,29 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="Enter Email Address">
+        <input type="email" name="email" class="form-control" id="inputEmail4" [(ngModel)]="user.email" placeholder="Enter Email Address">
       </div>
       <div class="form-group col-md-6">
         <label for="exampleFormControlSelect4">District Name</label>
-        <select class="form-control" id="exampleFormControlSelect4">
-          <option value="-1">-- Select District --</option>
-          <option value="1">Bokaro</option>
-          <option value="2">Chaibasa</option>
-          <option value="3">Chatra</option>
-          <option value="4">Daltonganj</option>
-          <option value="5">Deoghar</option>
-          <option value="6">Dhanbad</option>
-          <option value="7">Dumka</option>
-          <option value="8">Garhwa</option>
-          <option value="9">Giridih</option>
-          <option value="10">Godda</option>
-          <option value="11">Gumla</option>
-          <option value="12">Hazaribagh</option>
-          <option value="13">Jamshedpur</option>
-          <option value="14">Jamtara</option>
-          <option value="15">Khunti</option>
-          <option value="16">Koderma</option>
-          <option value="17">Latehar</option>
-          <option value="18">Lohardaga</option>
-          <option value="19">Pakur</option>
-          <option value="20">Ramgarh</option>
-          <option value="21">Ranchi</option>
-          <option value="22">Sahebganj</option>
-          <option value="23">Saraikela</option>
-          <option value="24">Simdega</option>
-        </select> </div>
+        <ngx-select-dropdown [config]="config" [options]="options"
+                      [(ngModel)]="user.district" name="district"></ngx-select-dropdown>
+
+      </div>
     </div>
     <div class="form-row">
 
       <div class="form-group col-md-6">
         <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" placeholder="Enter Password">
+        <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Enter Password" [(ngModel)]="user.password">
       </div>
       <div class="form-group col-md-6">
         <label for="inputMobileNo4">Mobile</label>
-        <input type="text" class="form-control" id="inputMobileNo4" placeholder="Enter Mobile No">
+        <input type="text" class="form-control" id="inputMobileNo4" name="mobile" placeholder="Enter Mobile No" [(ngModel)]="user.mobile">
       </div>
     </div>
 
     <button type="submit" name="btcreateuser" value="Foo" id="btcreateuser" style="background-color: #FF9934; border-color: #FF9934"
-      class="ladda-button btn btn-primary float-left waves-effect waves-light" data-style="zoom-out">
+      class="ladda-button btn btn-primary float-left waves-effect waves-light" data-style="zoom-out" (click)="createUser(user)">
       <span aria-hidden="true"></span><span class="ladda-label">Create Panel User </span><span
         class="btn-label btn-label-right">
       </span>

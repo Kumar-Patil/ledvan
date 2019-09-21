@@ -14,9 +14,7 @@ export class ViewPanelUsersComponent implements OnInit {
   constructor(private panelUsersService: PanelUsersService) { }
 
   ngOnInit() {
-    this.panelUsersService.getPanelUsers().subscribe(res => {
-      this.users = res;
-    });
+    this.getUsers();
     this.cols = [
       { field: 'email', header: 'Email' },
       { field: 'password', header: 'Password' },
@@ -26,7 +24,15 @@ export class ViewPanelUsersComponent implements OnInit {
     ];
   }
 
+  getUsers() {
+    this.panelUsersService.getPanelUsers().subscribe(res => {
+      this.users = res;
+    });
+  }
+
   deleteUser(user: any) {
-    this.panelUsersService.deletePanelUser(user.id);
+    this.panelUsersService.deletePanelUser(user.id).subscribe((data) => {
+      this.getUsers();
+    });
   }
 }
