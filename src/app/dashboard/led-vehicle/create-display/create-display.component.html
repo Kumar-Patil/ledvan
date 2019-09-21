@@ -84,7 +84,8 @@
                     <input type="file" name="uploaddriver" id="uploaddriver" class="filestyle"
                       data-placeholder="No file" data-classbutton="btn btn-primary"
                       data-classicon="glyphicon glyphicon-folder-open" tabindex="-1"
-                      style="position: absolute; clip: rect(0px, 0px, 0px, 0px);">
+                      style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"
+                      (change)="handlekilometerPictureName($event.target.files)">
                     <div class="bootstrap-filestyle input-group"><input type="text" class="form-control "
                         placeholder="No file" disabled=""> <span class="group-span-filestyle input-group-btn"
                         tabindex="0"><label for="uploaddriver" class="btn btn-default" style="background-color: #FF9934;border: 1px solid #FF9934; margin-left: -2px;">
@@ -96,9 +97,10 @@
                   <div class="form-group">
                     <label class="control-label" style="margin-bottom: 10px; padding-top: 0px;">Stage Video</label>
                     <input type="file" name="uploaddriver" id="uploaddriver" class="filestyle"
-                      data-placeholder="No file" data-classbutton="btn btn-primary"
+                      data-placeholder="getPlaceHolder()" data-classbutton="btn btn-primary"
                       data-classicon="glyphicon glyphicon-folder-open" tabindex="-1"
-                      style="position: absolute; clip: rect(0px, 0px, 0px, 0px);">
+                      style="position: absolute; clip: rect(0px, 0px, 0px, 0px);"
+                      (change)="handlekilometerPictureName($event.target.files)">
                     <div class="bootstrap-filestyle input-group"><input type="text" class="form-control "
                         placeholder="No file" disabled=""> <span class="group-span-filestyle input-group-btn" tabindex="0">
                         <label for="uploaddriver" class="btn btn-default " style="background-color: #FF9934;border: 1px solid #FF9934; margin-left: -2px;">

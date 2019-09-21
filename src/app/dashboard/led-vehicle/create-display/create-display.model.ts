@@ -9,14 +9,14 @@ export class CreateDisplayRequest {
     vehicleStayArea: string;
     createdAt: any;
     display: Display[];
-    districtAreaName: '';
-    districtName: '';
-    generalHourPictureName: '';
+    districtAreaName: String;
+    districtName: String;
+    generalHourPictureName: String;
     id: 0;
-    kilometerPictureName: '';
-    reportDate: '';
-    status: '';
-    updatedAt: '';
+    kilometerPictureName: String;
+    reportDate: String;
+    status: String;
+    updatedAt: String;
 }
 
 export class VehicleNo {
