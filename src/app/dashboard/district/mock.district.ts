@@ -97,6 +97,104 @@ export const Districts = [
         }
 ];
 
+export const Routes = [
+    {
+        routeName: 'Bokaro',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Chaibasa',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Chatra',
+        id: 'Bokaro'
+    },{
+        routeName: 'Daltonganj',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Deoghar',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Dhanbad',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Dumka',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Garhwa',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Giridih',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Godda',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Gumla',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Hazaribagh',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Jamshedpur',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Jamtara',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Khunti',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Koderma',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Latehar',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Lohardaga',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Pakur',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Ramgarh',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Ranchi',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Sahebganj',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Saraikela',
+        id: 'Bokaro'
+    },
+    {
+        routeName: 'Simdega',
+        id: 'Bokaro'
+    }
+];
+
 export const Area = [
     {
         areaName: 'Bokaro1',
