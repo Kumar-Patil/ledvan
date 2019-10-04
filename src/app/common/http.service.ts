@@ -22,14 +22,15 @@ export class HttpService {
 
   public getAll(apiName: any) {
     const requestUrl = this.apiService.API_BASE_URL + apiName;
-    return this.httpClient.get(requestUrl);
+    const loggedInUserId = 1;
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json; charset=utf-8');
+    return this.httpClient.get(requestUrl,{
+      headers: new HttpHeaders({
+      }).set('Content-Type', 'application/json').set('loggedInUserId', loggedInUserId.toString())/*,
+      params: new HttpParams().set('id', id)*/
+    });
     // return of(Districts);
-  }
-
-  public getAllArea(apiName: any) {
-    const requestUrl = this.apiService.API_BASE_URL + apiName;
-    // return this.httpClient.get(requestUrl);
-    return of(Area);
   }
 
   public put(apiName: any, id: any, data: any) {

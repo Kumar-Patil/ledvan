@@ -111,7 +111,6 @@ export class CreateAreaComponent implements OnInit {
     this.httpService.getById(this.apiService.API_AREA_API, areaId).subscribe((data) => {
       if (data) {
         this.areaDetails = data;
-        this.areaName = this.areaDetails.areaName;
         this.spinner.hide();
       }
     }, error => {

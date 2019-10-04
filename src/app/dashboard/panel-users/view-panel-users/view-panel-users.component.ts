@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LedVehicleService } from '../../led-vehicle/led-vehicle.service';
 import { PanelUsersService } from '../panel-users.service';
+import { ConfirmationDialogService } from '../../../confirmation-dialog/confirmation-dialog.service';
+import { AlertService } from '../../../_alert';
 
 @Component({
   selector: 'app-view-panel-users',
@@ -11,15 +13,16 @@ export class ViewPanelUsersComponent implements OnInit {
 
   cols: any[];
   users: any[];
-  constructor(private panelUsersService: PanelUsersService) { }
+  constructor(private panelUsersService: PanelUsersService, private alertService: AlertService,
+              private confirmationDialogService: ConfirmationDialogService) { }
 
   ngOnInit() {
     this.getUsers();
     this.cols = [
       { field: 'email', header: 'Email' },
       { field: 'password', header: 'Password' },
-      { field: 'district', header: 'District' },
-      { field: 'mobile', header: 'Mobile' },
+      { field: 'districtName', header: 'District' },
+      { field: 'mobileNo', header: 'Mobile' },
       { field: 'delete', header: '' },
     ];
   }
@@ -29,10 +32,33 @@ export class ViewPanelUsersComponent implements OnInit {
       this.users = res;
     });
   }
+  delete(user: any) {
 
+    this.deleteUser(user);
+    // this.openConfirmationDialog(user);
+  }
   deleteUser(user: any) {
     this.panelUsersService.deletePanelUser(user.id).subscribe((data) => {
-      this.getUsers();
+      this.alertService.success('sucessfully deleted panel user');
+      this.autoHideMessage();
     });
+  }
+  public openConfirmationDialog(district: any) {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to delete?')
+      .then((confirmed) => this.deleteById(confirmed, district))
+      .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
+  }
+
+  deleteById(confirmed, user: any) {
+    if (confirmed) {
+     this.deleteUser(user) ;
+    }
+  }
+
+  autoHideMessage() {
+    setTimeout(() => {
+      this.alertService.clear();
+      this.getUsers();
+    }, 1000);
   }
 }

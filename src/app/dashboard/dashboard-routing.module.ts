@@ -11,6 +11,7 @@ import { UpdateSmtpComponent } from './email-settings/update-smtp/update-smtp.co
 import { ViewVehiclesComponent } from './led-vehicle-tab/view-vehicles/view-vehicles.component';
 import { UploadRouteMapComponent } from './route-map/upload-route-map/upload-route-map.component';
 import { ViewRoutesComponent } from './route-map/view-routes/view-routes.component';
+import { ConfirmationDialogComponent } from './../confirmation-dialog/confirmation-dialog.component';
 
 const routes: Routes = [
   {
@@ -67,7 +68,11 @@ const routes: Routes = [
       {
         path: 'viewRoutes',
         component: ViewRoutesComponent
-      }
+      },
+      {
+        path: 'viewPanelUser/panel/:id',
+        component: CreatePanelUsersComponent
+      },
     ]
   }
 ];

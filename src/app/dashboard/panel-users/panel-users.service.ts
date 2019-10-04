@@ -3,29 +3,26 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { PanelUsers } from './mock.panel-users';
 import { ApiService } from 'src/app/common/api.service';
-
+import { HttpService } from '../../common/http.service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PanelUsersService {
 
-    constructor(private httpClient: HttpClient, private apiService: ApiService) { }
+    constructor(private httpClient: HttpService, private apiService: ApiService) { }
 
     getPanelUsers(): Observable<any> {
         // return of(PanelUsers);
-        const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_PANEL_USERS;
-        return this.httpClient.get(requestUrl);
+        return this.httpClient.getAll(this.apiService.API_PANEL_USERS);
     }
 
     createPanelUser(data: any) {
-        const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_PANEL_USERS;
-        return this.httpClient.post(requestUrl, data);
+        return this.httpClient.post(this.apiService.API_PANEL_USERS, data);
     }
 
     deletePanelUser(id: string): Observable<any> {
-        const requestUrl = this.apiService.API_BASE_URL + this.apiService.API_PANEL_USERS + '/' +id;
-        return this.httpClient.delete(requestUrl);
+        return this.httpClient.delete(this.apiService.API_PANEL_USERS, id);
     }
 
 

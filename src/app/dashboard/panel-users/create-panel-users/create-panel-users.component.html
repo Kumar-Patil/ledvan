@@ -1,32 +1,31 @@
 <div class="container">
+    <h2>{{createUpdate}}</h2>
   <form class="panel-form">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
-        <input type="email" name="email" class="form-control" id="inputEmail4" [(ngModel)]="user.email" placeholder="Enter Email Address">
+        <input type="email" name="email" class="form-control" id="inputEmail4" [(ngModel)]="userDetails.email" placeholder="Enter Email Address">
       </div>
       <div class="form-group col-md-6">
         <label for="exampleFormControlSelect4">District Name</label>
-        <ngx-select-dropdown [config]="config" [options]="options"
-                      [(ngModel)]="user.district" name="district"></ngx-select-dropdown>
-
+        <ngx-select-dropdown (change)="selectionChanged($event)" [config]="config" [options]="options" [(ngModel)]="areaDetails" name="areaDetails"></ngx-select-dropdown>
       </div>
     </div>
     <div class="form-row">
 
       <div class="form-group col-md-6">
         <label for="inputPassword4">Password</label>
-        <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Enter Password" [(ngModel)]="user.password">
+        <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="Enter Password" [(ngModel)]="userDetails.password">
       </div>
       <div class="form-group col-md-6">
         <label for="inputMobileNo4">Mobile</label>
-        <input type="text" class="form-control" id="inputMobileNo4" name="mobile" placeholder="Enter Mobile No" [(ngModel)]="user.mobile">
+        <input type="text" class="form-control" id="inputMobileNo4" name="mobileNo" placeholder="Enter Mobile No" [(ngModel)]="userDetails.mobileNo">
       </div>
     </div>
 
     <button type="submit" name="btcreateuser" value="Foo" id="btcreateuser" style="background-color: #FF9934; border-color: #FF9934"
-      class="ladda-button btn btn-primary float-left waves-effect waves-light" data-style="zoom-out" (click)="createUser(user)">
-      <span aria-hidden="true"></span><span class="ladda-label">Create Panel User </span><span
+      class="ladda-button btn btn-primary float-left waves-effect waves-light" data-style="zoom-out" (click)="createUser(userDetails)">
+      <span aria-hidden="true"></span><span class="ladda-label">{{createUpdate}} </span><span
         class="btn-label btn-label-right">
       </span>
     </button>

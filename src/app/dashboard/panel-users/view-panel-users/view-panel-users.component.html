@@ -1,3 +1,4 @@
+<ngx-spinner></ngx-spinner>
 <div>
     <div>
         <h2>Panel Users</h2>
@@ -16,10 +17,11 @@
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-user let-columns="columns">
-          <tr> 
+          <tr>
             <td *ngFor="let col of columns" [ngSwitch]="col.field">
-              <span *ngSwitchDefault> {{user[col.field]}} </span>
-              <button *ngSwitchCase="'delete'" type="button" class="btn btn-danger btn-sm" (click)="deleteUser(user)">Delete</button> 
+              <span *ngSwitchDefault> <a routerLink="panel/{{user.id}}">{{user[col.field]}}</a> </span>
+              <button *ngSwitchCase="'delete'" type="button" class="btn btn-danger btn-sm"
+                (click)="delete(user)">Delete</button>
             </td>
           </tr>
         </ng-template>

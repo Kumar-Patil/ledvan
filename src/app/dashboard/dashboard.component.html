@@ -93,6 +93,10 @@
             <ng-container>
                 <button mat-menu-item [routerLink]="'viewVehicle'">View Vehicles</button>
               </ng-container>
+
+              <ng-container>
+                <button mat-menu-item (click)="redirectToSpeedTrackUrl()">View GPS</button>
+              </ng-container>
           </mat-menu>
         </mat-list-item>
 

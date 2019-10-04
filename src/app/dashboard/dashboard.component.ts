@@ -27,8 +27,8 @@ export class DashboardComponent implements OnInit {
   ];
 
   accounts: Account[] = [
-    {value: 'change', viewValue: 'Change password'},
-    {value: 'logout', viewValue: 'Logout'}
+    { value: 'change', viewValue: 'Change password' },
+    { value: 'logout', viewValue: 'Logout' }
   ];
 
   name = 'Angular 5';
@@ -70,5 +70,8 @@ export class DashboardComponent implements OnInit {
     if (!this.isExpanded) {
       this.isShowing = false;
     }
+  }
+  redirectToSpeedTrackUrl() {
+    window.open('http://www.speedotrack.in/');
   }
 }
