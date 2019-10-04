@@ -8,6 +8,7 @@ export class ApiService {
   //public API_BASE_URL = 'http://localhost:80/stageapi/api/v1/';
   // District API
   public API_DISTRICT_API = 'district';
+  public API_ROUTES_API = 'routes';
   public API_AREA_API = 'area';
 
   //Dashboard APIs

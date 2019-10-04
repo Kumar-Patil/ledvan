@@ -1,1 +1,36 @@
-<p>view-routes works!</p>
+<div>
+  
+  <h2>View Routes </h2>
+  <p-table [columns]="cols" [value]="routes" sortMode="multiple" [paginator]="true" [rows]="10" #dt>
+    <!-- <ng-template pTemplate="caption">
+        <div style="text-align: right">        
+            <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+        </div>
+    </ng-template> -->
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+          {{col.header}}
+          <p-sortIcon [field]="col.field"></p-sortIcon>
+        </th>
+      </tr>
+      <tr>
+        <th *ngFor="let col of columns" [ngSwitch]="col.field">
+          <input *ngSwitchDefault pInputText type="text"
+            (input)="dt.filter($event.target.value, col.field, col.filterMatchMode)">
+          <span *ngSwitchCase="'delete'"></span>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns" [ngSwitch]="col.field">
+          <span *ngSwitchDefault> <a href="#">{{user[col.field]}}</a> </span>
+          <button *ngSwitchCase="'delete'" type="button" class="btn btn-danger btn-sm"
+            (click)="delete(user)">Delete</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
