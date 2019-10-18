@@ -1,5 +1,9 @@
 <ngx-spinner></ngx-spinner>
-<div><h2>View Areas</h2>
+<div style="float: right; padding: 10px 0px; position: relative; z-index: 10;">
+  <button type="button" class="btn btn-danger" (click)="createArea()">Create Area</button>
+</div>
+<div style="float: left">
+  <!-- <h2>View Areas</h2> -->
 <p-table [columns]="cols" [value]="areas" sortMode="multiple" [paginator]="true" [rows]="10" #dt>
     <ng-template pTemplate="caption">
         <div style="text-align: right">        

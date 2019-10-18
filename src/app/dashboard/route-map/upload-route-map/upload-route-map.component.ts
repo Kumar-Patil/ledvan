@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload-route-map',
   templateUrl: './upload-route-map.component.html',
-  styleUrls: ['./upload-route-map.component.css']
+  styleUrls: ['./upload-route-map.component.scss']
 })
 export class UploadRouteMapComponent implements OnInit {
 
@@ -64,12 +65,16 @@ export class UploadRouteMapComponent implements OnInit {
     searchPlaceholder: 'Search', // label thats displayed in search input,
     searchOnKey: 'name'
   };
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   selectionChanged(event: Event) {
     console.log(event);
+  }
+
+  cancel() {
+    this.router.navigateByUrl('dashboard/viewRoutes');
   }
 }

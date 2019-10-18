@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-create-display',
   templateUrl: './create-area.component.html',
-  styleUrls: ['./create-area.component.css']
+  styleUrls: ['./create-area.component.scss']
 })
 export class CreateAreaComponent implements OnInit {
 
@@ -119,5 +119,9 @@ export class CreateAreaComponent implements OnInit {
       this.alertService.error('Error while featching area!');
       console.log(error);
     });
+  }
+
+  cancel() {
+    this.router.navigateByUrl('dashboard/area/viewarea');
   }
 }

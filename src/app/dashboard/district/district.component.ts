@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-led-vehicle',
   templateUrl: './district.component.html',
-  styleUrls: ['./district.component.css']
+  styleUrls: ['./district.component.scss']
 })
 export class DistrictComponent implements OnInit {
 

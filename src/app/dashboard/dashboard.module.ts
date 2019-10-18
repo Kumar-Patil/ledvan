@@ -28,6 +28,8 @@ import { ViewVehiclesComponent } from './led-vehicle-tab/view-vehicles/view-vehi
 import { SelectDropDownModule } from 'ngx-select-dropdown';
 import { ConfirmationDialogComponent } from './../confirmation-dialog/confirmation-dialog.component';
 import { ConfirmationDialogService } from './../confirmation-dialog/confirmation-dialog.service';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [DashboardComponent, MydashboardComponent, LedVehicleTabComponent,
@@ -39,7 +41,9 @@ import { ConfirmationDialogService } from './../confirmation-dialog/confirmation
     EmailSettingsComponent,
     UpdateSmtpComponent,
     ViewVehiclesComponent,
-    ConfirmationDialogComponent],
+    ConfirmationDialogComponent,
+    SideBarComponent,
+    NavbarComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,

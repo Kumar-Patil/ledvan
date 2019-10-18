@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-vehicle',
   templateUrl: './create-vehicle.component.html',
-  styleUrls: ['./create-vehicle.component.css']
+  styleUrls: ['./create-vehicle.component.scss']
 })
 export class CreateVehicleComponent implements OnInit {
 
@@ -25,7 +26,7 @@ export class CreateVehicleComponent implements OnInit {
   };
 
   vehicle: any = {};
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -34,4 +35,7 @@ export class CreateVehicleComponent implements OnInit {
     console.log('About to create vehicle' + JSON.stringify(this.vehicle));
   }
 
+  cancel() {
+    this.router.navigateByUrl('dashboard/viewVehicle');
+  }
 }

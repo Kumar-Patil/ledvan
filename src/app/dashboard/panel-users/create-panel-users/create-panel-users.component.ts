@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-panel-users',
   templateUrl: './create-panel-users.component.html',
-  styleUrls: ['./create-panel-users.component.css']
+  styleUrls: ['./create-panel-users.component.scss']
 })
 export class CreatePanelUsersComponent implements OnInit {
 
@@ -67,5 +67,9 @@ export class CreatePanelUsersComponent implements OnInit {
     this.panelUsersService.createPanelUser(userReq).subscribe((res) => {
       this.router.navigate(['dashboard/viewPanelUser']);
     });
+  }
+
+  cancel() {
+    this.router.navigateByUrl('dashboard/viewPanelUser');
   }
 }

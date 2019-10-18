@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-update-smtp',
   templateUrl: './update-smtp.component.html',
-  styleUrls: ['./update-smtp.component.css']
+  styleUrls: ['./update-smtp.component.scss']
 })
 
 export class UpdateSmtpComponent implements OnInit {
