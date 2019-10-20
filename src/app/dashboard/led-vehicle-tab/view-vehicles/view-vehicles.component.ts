@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-vehicles',
   templateUrl: './view-vehicles.component.html',
-  styleUrls: ['./view-vehicles.component.css']
+  styleUrls: ['./view-vehicles.component.scss']
 })
 export class ViewVehiclesComponent implements OnInit {
 
   cols: any[];
   vehicleList: any[];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.cols = [
@@ -22,7 +23,6 @@ export class ViewVehiclesComponent implements OnInit {
       { field: 'operatorNo', header: 'Operator No' },
       { field: 'delete', header: '' },
     ];
-
 
     this.vehicleList = [
       {
@@ -48,4 +48,7 @@ export class ViewVehiclesComponent implements OnInit {
     ];
   }
 
+  createVehicle() {
+    this.router.navigateByUrl('dashboard/createVehicle');
+  }
 }

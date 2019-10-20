@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-create-display',
   templateUrl: './view-district.component.html',
-  styleUrls: ['./view-district.component.css'],
+  styleUrls: ['./view-district.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ViewDistrictComponent implements OnInit {
@@ -19,12 +19,10 @@ export class ViewDistrictComponent implements OnInit {
   districts: any;
   cols: any[];
   constructor(private districtService: DistrictService,
-    private httpService: HttpService, private apiService: ApiService,
-    private spinner: NgxSpinnerService,
-    private confirmationDialogService: ConfirmationDialogService,
-    private alertService: AlertService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
+              private httpService: HttpService, private apiService: ApiService,
+              private spinner: NgxSpinnerService, private confirmationDialogService: ConfirmationDialogService,
+              private alertService: AlertService, private router: Router,
+              private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -34,6 +32,10 @@ export class ViewDistrictComponent implements OnInit {
     ];
     this.spinner.show();
     this.getAllDistricts();
+  }
+
+  createDistrict(): any {
+    this.router.navigateByUrl('dashboard/district/createDistrict');
   }
 
   getAllDistricts() {

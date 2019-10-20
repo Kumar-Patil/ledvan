@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { IAngularMyDpOptions } from 'angular-mydatepicker';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-daily-report',
   templateUrl: './daily-report.component.html',
-  styleUrls: ['./daily-report.component.css']
+  styleUrls: ['./daily-report.component.scss']
 })
 export class DailyReportComponent implements OnInit {
 
@@ -15,7 +16,7 @@ export class DailyReportComponent implements OnInit {
     dateFormat: 'dd-mm-yyyy'
     // other options are here...
   };
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     if (this.myDateInit) {
@@ -36,4 +37,7 @@ export class DailyReportComponent implements OnInit {
     }
   }
 
+  viewMonthlyReport() {
+    this.router.navigateByUrl('dashboard/monthlyReport');
+  }
 }

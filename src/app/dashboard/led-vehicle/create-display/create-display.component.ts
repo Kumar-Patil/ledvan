@@ -3,10 +3,11 @@ import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
 import { NgForm } from '@angular/forms';
 import { LedVehicleService } from '../led-vehicle.service';
 import { CreateDisplayRequest, Display } from './create-display.model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-display',
   templateUrl: './create-display.component.html',
-  styleUrls: ['./create-display.component.css']
+  styleUrls: ['./create-display.component.scss']
 })
 export class CreateDisplayComponent implements OnInit {
 
@@ -80,7 +81,8 @@ export class CreateDisplayComponent implements OnInit {
     searchPlaceholder: 'Search', // label thats displayed in search input,
     searchOnKey: 'name'
   };
-  constructor(private ledVehicleService: LedVehicleService) {
+
+  constructor(private ledVehicleService: LedVehicleService, private router: Router) {
     // this.createDisplayRequest.date = null;
     this.createDisplayRequest = new CreateDisplayRequest();
     this.createDisplayRequest.createdAt = null;
@@ -176,5 +178,9 @@ export class CreateDisplayComponent implements OnInit {
 
   getPlaceHolder() {
     return this.createDisplayRequest.kilometerPictureName ? this.createDisplayRequest.kilometerPictureName: 'No file';
+  }
+
+  cancel() {
+    this.router.navigateByUrl('dashboard/ledVehicle/reviewedDisplay');
   }
 }

@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { LedVehicleService } from '../led-vehicle.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reviewed-display',
   templateUrl: './reviewed-display.component.html',
-  styleUrls: ['./reviewed-display.component.css']
+  styleUrls: ['./reviewed-display.component.scss']
 })
 export class ReviewedDisplayComponent implements OnInit {
   cols: any[];
   users: any[];
-  constructor(private ledVehicleService: LedVehicleService) { }
+  constructor(private ledVehicleService: LedVehicleService, private router: Router) { }
 
   ngOnInit() {
     this.ledVehicleService.getReviewedDisplays().subscribe(res => {
@@ -24,4 +25,11 @@ export class ReviewedDisplayComponent implements OnInit {
     ];
   }
 
+  createDisplay() {
+    this.router.navigateByUrl('dashboard/ledVehicle/createDisplay');
+  }
+
+  unreviewedDisplay() {
+    this.router.navigateByUrl('dashboard/ledVehicle/unreviewedDisplay');
+  }
 }

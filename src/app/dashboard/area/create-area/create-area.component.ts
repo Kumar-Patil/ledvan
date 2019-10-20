@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-create-display',
   templateUrl: './create-area.component.html',
-  styleUrls: ['./create-area.component.css']
+  styleUrls: ['./create-area.component.scss']
 })
 export class CreateAreaComponent implements OnInit {
 
@@ -110,7 +110,9 @@ export class CreateAreaComponent implements OnInit {
   getAreaById(areaId: any) {
     this.httpService.getById(this.apiService.API_AREA_API, areaId).subscribe((data) => {
       if (data) {
+        alert(JSON.stringify(data))
         this.areaDetails = data;
+        this.areaName = this.areaDetails.areaName;
         this.spinner.hide();
       }
     }, error => {
@@ -118,5 +120,9 @@ export class CreateAreaComponent implements OnInit {
       this.alertService.error('Error while featching area!');
       console.log(error);
     });
+  }
+
+  cancel() {
+    this.router.navigateByUrl('dashboard/area/viewarea');
   }
 }

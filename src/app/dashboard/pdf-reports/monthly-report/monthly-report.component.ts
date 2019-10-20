@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { IAngularMyDpOptions, IMyDateModel } from 'angular-mydatepicker';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-monthly-report',
   templateUrl: './monthly-report.component.html',
-  styleUrls: ['./monthly-report.component.css']
+  styleUrls: ['./monthly-report.component.scss']
 })
 export class MonthlyReportComponent implements OnInit {
 
@@ -71,7 +73,7 @@ export class MonthlyReportComponent implements OnInit {
     searchPlaceholder: 'Search', // label thats displayed in search input,
     searchOnKey: 'name'
   };
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     if (this.myDateInit) {
@@ -94,5 +96,9 @@ export class MonthlyReportComponent implements OnInit {
 
   selectionChanged(event: Event) {
     console.log(event);
+  }
+
+  viewdailyReport() {
+    this.router.navigateByUrl('dashboard/dailyReport');
   }
 }

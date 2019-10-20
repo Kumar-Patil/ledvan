@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-create-display',
   templateUrl: './view-area.component.html',
-  styleUrls: ['./view-area.component.css'],
+  styleUrls: ['./view-area.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ViewAreaComponent implements OnInit {
@@ -18,11 +18,11 @@ export class ViewAreaComponent implements OnInit {
   areas: any;
   cols: any[];
   constructor(private httpService: HttpService, private apiService: ApiService,
-    private spinner: NgxSpinnerService,
-    private confirmationDialogService: ConfirmationDialogService,
-    private alertService: AlertService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
+              private spinner: NgxSpinnerService,
+              private confirmationDialogService: ConfirmationDialogService,
+              private alertService: AlertService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -34,7 +34,9 @@ export class ViewAreaComponent implements OnInit {
     ];
     this.getAllAreas();
   }
-
+  createArea() {
+    this.router.navigateByUrl('dashboard/area/createarea');
+  }
   getAllAreas() {
     this.httpService.getAll(this.apiService.API_AREA_API).subscribe((data) => {
       if (data) {

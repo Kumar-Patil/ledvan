@@ -1,9 +1,10 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, ViewEncapsulation } from '@angular/core';
-import {LedVehicleService} from '../led-vehicle.service';
+import { LedVehicleService } from '../led-vehicle.service';
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-unreviewed-display',
     templateUrl: './unreviewed-display.component.html',
-    styleUrls: ['./unreviewed-display.component.css']
+    styleUrls: ['./unreviewed-display.component.scss']
 })
 export class UnreviewedDisplayComponent implements OnInit {
 
@@ -11,7 +12,7 @@ export class UnreviewedDisplayComponent implements OnInit {
 
     cols: any[];
 
-    constructor(private ledVehicleService: LedVehicleService) {
+    constructor(private ledVehicleService: LedVehicleService, private router: Router) {
 
     }
     ngOnInit() {
@@ -37,6 +38,13 @@ export class UnreviewedDisplayComponent implements OnInit {
         this.ledVehicleService.deleteUser(user).subscribe(res => {
             // success block delete user
         });
+    }
+
+    createDisplay() {
+        this.router.navigateByUrl('dashboard/ledVehicle/createDisplay');
+    }
+    reviewedDisplay() {
+        this.router.navigateByUrl('dashboard/ledVehicle/reviewedDisplay');
     }
 }
 

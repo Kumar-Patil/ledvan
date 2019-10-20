@@ -10,7 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-create-display',
   templateUrl: './create-district.component.html',
-  styleUrls: ['./create-district.component.css']
+  styleUrls: ['./create-district.component.scss']
 })
 export class CreateDistrictComponent implements OnInit {
 
@@ -90,4 +90,7 @@ export class CreateDistrictComponent implements OnInit {
     });
   }
 
+  cancel() {
+    this.router.navigateByUrl('dashboard/district/viewDistrict');
+  }
 }

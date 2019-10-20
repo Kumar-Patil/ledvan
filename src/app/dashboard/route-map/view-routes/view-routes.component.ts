@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ConfirmationDialogService } from 'src/app/confirmation-dialog/confirmation-dialog.service';
 import { HttpService } from 'src/app/common/http.service';
 import { ApiService } from 'src/app/common/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-routes',
   templateUrl: './view-routes.component.html',
-  styleUrls: ['./view-routes.component.css']
+  styleUrls: ['./view-routes.component.scss']
 })
 export class ViewRoutesComponent implements OnInit {
   cols: any[];
   routes: any[];
   constructor(private confirmationDialogService: ConfirmationDialogService, private httpService: HttpService,
-              private apiService: ApiService) { }
+              private apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.cols = [
@@ -131,6 +132,10 @@ export class ViewRoutesComponent implements OnInit {
   }
   delete(routes) {
 
+  }
+
+  uploadRouteMap() {
+    this.router.navigateByUrl('dashboard/uploadRouteMap');
   }
 
   edit() {

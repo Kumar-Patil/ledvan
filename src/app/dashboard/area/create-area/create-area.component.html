@@ -2,11 +2,11 @@
 <div id="create-district">
   <div class="row">
     <div class="col-12 col-md-12 col-lg-12" >
-      <div>
+      <!-- <div>
         <h4>
           AREA DETAILS
         </h4>
-      </div>
+      </div> -->
       <div>
         <div class="row">
           <div class="col-sm-12" style="padding-right: 0px;padding-left: 0px;">
@@ -33,6 +33,9 @@
                                     <button type="submit" style="background-color: #FF9934" name="btcreatereport" (click)="create()" value="Foo" id="btcreatereport" class="ladda-button btn btn-primary waves-effect waves-light" data-style="zoom-out">
                                 <span aria-hidden="true"></span><span class="ladda-label">{{createUpdate}}</span><span class="btn-label btn-label-right"><i class="fa fa-arrow-right"></i>
                                    </span><span class="ladda-spinner"></span></button>
+                                   <button type="button" (click)="cancel()" class="btn btn-secondary" data-style="zoom-out" style="margin-left: 20px">
+                                    <span class="ladda-label">Cancel</span>
+                                   </button>
                                 </div>
                             </div>
                         </div>

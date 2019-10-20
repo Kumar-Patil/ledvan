@@ -25,7 +25,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css",
+              "src/assets/scss/material-dashboard.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/primeng/resources/themes/nova-colored/theme.css",
               "./node_modules/primeng/resources/primeng.min.css",
@@ -35,7 +35,10 @@
             ],
             "scripts": [
               "./node_modules/chart.js/dist/Chart.js",
-              "./node_modules/quill/dist/quill.min.js"
+              "./node_modules/quill/dist/quill.min.js",
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -100,7 +103,8 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
+              "src/assets/scss/material-dashboard.scss",
+              "src/assets/css/demo.css"
             ],
             "scripts": []
           }
@@ -133,5 +137,10 @@
       }
     }
   },
-  "defaultProject": "led-vehicle"
+  "defaultProject": "led-vehicle",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

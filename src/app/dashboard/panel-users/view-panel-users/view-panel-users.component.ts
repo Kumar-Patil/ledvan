@@ -3,18 +3,20 @@ import { LedVehicleService } from '../../led-vehicle/led-vehicle.service';
 import { PanelUsersService } from '../panel-users.service';
 import { ConfirmationDialogService } from '../../../confirmation-dialog/confirmation-dialog.service';
 import { AlertService } from '../../../_alert';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-panel-users',
   templateUrl: './view-panel-users.component.html',
-  styleUrls: ['./view-panel-users.component.css']
+  styleUrls: ['./view-panel-users.component.scss']
 })
 export class ViewPanelUsersComponent implements OnInit {
 
   cols: any[];
   users: any[];
-  constructor(private panelUsersService: PanelUsersService, private alertService: AlertService,
-              private confirmationDialogService: ConfirmationDialogService) { }
+  constructor(private panelUsersService: PanelUsersService,
+              private alertService: AlertService,
+              private confirmationDialogService: ConfirmationDialogService, private router: Router) { }
 
   ngOnInit() {
     this.getUsers();
@@ -25,6 +27,10 @@ export class ViewPanelUsersComponent implements OnInit {
       { field: 'mobileNo', header: 'Mobile' },
       { field: 'delete', header: '' },
     ];
+  }
+
+  createPanelUser() {
+    this.router.navigateByUrl('dashboard/createPanelUser');
   }
 
   getUsers() {

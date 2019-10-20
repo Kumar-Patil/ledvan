@@ -1,8 +1,13 @@
 <ngx-spinner></ngx-spinner>
 <div>
     <div>
+<div style="float: right; padding: 10px 0px; position: relative; z-index: 10;">
+  <button type="button" class="btn btn-danger" (click)="createPanelUser()">Create Panel User</button>
+</div>
+<div style="float: left">
+    <!-- <div>
         <h2>Panel Users</h2>
-    </div>
+    </div> -->
     <!-- <div *ngIf="users && users.length > 0"> -->
       <p-table [columns]="cols" [value]="users" sortMode="multiple" [paginator]="true" [rows]="10" #dt>
         <ng-template pTemplate="caption">
