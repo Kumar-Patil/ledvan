@@ -1,10 +1,10 @@
 <div id="content-wrapper" [style.background-image]="'url('+image+')'">
-   <div class="login" style="position: relative; right: 40px;">
-    <h2 class="login-header" style="font-weight: bold;border-radius: 25px 25px 0px 0px">Stage Administration</h2>
-    <form style="border-radius: 0px 0px 25px 25px" [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+   <div  style="position: relative; right: 40px;">
+    <!-- <h2 class="login-header" style="font-weight: bold;border-radius: 25px 25px 0px 0px">Stage Administration</h2> -->
+    <form style="border-radius: 0px 0px 25px 25px" [formGroup]="loginForm"  (ngSubmit)="login()">
 
       <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-        <input type="email" placeholder="Email" formControlName="email">
+        <input class="theme btn btn-info btn-lg" type="email" placeholder="Email" formControlName="email">
       </p>
 
       <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
@@ -12,7 +12,7 @@
       </div>
 
       <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-        <input type="password" placeholder="Password" formControlName="password">
+        <input class="theme btn btn-info btn-lg" type="password" placeholder="Password" formControlName="password">
       </p>
 
       <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
@@ -20,8 +20,8 @@
       </div>
 
       <p>
-        <input type="submit" value="Log in">
        
+        <a href="#" class="btn btn-info btn-lg theme1"> Log in </a>
       </p>
     </form>
   </div>
