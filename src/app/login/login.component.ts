@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit,AfterViewInit,OnDestroy {
 
   loginForm: FormGroup;
   isSubmitted  =  false;
-  images=['../../assets/images/login.png','../../assets/images/image1.jpeg','../../assets/images/image2.jpeg'];
+  images=['../../stage/assets/images/login.png','../../stage/assets/images/image1.jpeg','../../stage/assets/images/image2.jpeg'];
   constructor(private authService: AuthService, private router: Router,
               private formBuilder: FormBuilder) { }
 
